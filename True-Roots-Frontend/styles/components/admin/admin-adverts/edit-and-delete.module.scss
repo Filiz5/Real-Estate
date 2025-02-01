@@ -1,0 +1,48 @@
+@use '@/styles/variables' as *;
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-right: 20px;
+}
+
+.edit_delete_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $gap-md;
+}
+
+.edit_button, .delete_button{
+    border: none;
+    border-radius: $rounded-sm;
+    background-color: rgba($clr-lavender-blush, 0.5);
+    cursor: pointer;
+    color: $clr-blueberryblue;
+    opacity: 0.8;
+
+    &:hover{
+        transform: scale(1.4);
+        transition: all 0.3s ease;
+    }
+}
+
+@media screen and (max-width: $screen-sm){
+    .container{
+        flex-direction: column;
+        gap: $gap-md;
+    }
+
+    .edit_delete_container{
+        margin-bottom: 20px;
+        gap: $gap-md;
+    }
+
+    .edit_button, .delete_button{
+        width: 100%;
+    }
+    
+    
+}

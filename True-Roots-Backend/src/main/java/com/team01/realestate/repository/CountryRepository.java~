@@ -1,0 +1,7 @@
+package com.team01.realestate.repository;
+
+import com.team01.realestate.entity.concretes.business.Country;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CountryRepository extends JpaRepository<Country, Long> {
+}

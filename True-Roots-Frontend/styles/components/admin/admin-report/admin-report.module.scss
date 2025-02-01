@@ -1,0 +1,102 @@
+@use '@/styles/variables' as *;
+
+.container {
+    padding: $padding-lg;
+    background-color: $clr-smoke;
+}
+
+.section {
+    background-color: $clr-purple-light;
+    padding: $padding-md;
+    margin-bottom: $margin-md;
+    border-radius: $rounded-md;
+    position: relative;
+}
+
+.section h2 {
+    margin-bottom: $margin-sm;
+    font-size: $font-xl;
+}
+
+.inputGroup {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: $gap-sm;
+    padding-right: $padding-md;
+    height: 100%;
+    width: 100%;
+}
+
+.inputGroup input,
+.inputGroup select {
+    flex: 1;
+    height: 35px;
+    font-size: $font-sm;
+    min-width: 100px;
+    max-width: 200px;
+    margin: $margin-xs;
+}
+
+.iconContainer {
+    background-color: $clr-purple-darker;
+    border-color: black;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: auto;
+}
+
+.icon {
+    color: white;
+    font-size: $font-2xl;
+}
+
+.iconButton {
+    background-color: $clr-danger;
+    border: none;
+    cursor: pointer;
+    padding: $padding-xs;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: $font-md;
+}
+
+@media (max-width: $screen-md) {
+    .inputGroup {
+        flex-direction: column;
+    }
+
+    .inputGroup input,
+    .inputGroup select {
+        max-width: 100%;
+    }
+
+    .iconContainer {
+        height: 50px;
+        width: 50px;
+    }
+
+    .icon {
+        font-size: $font-lg;
+    }
+}
+
+@media (max-width: $screen-sm) {
+    .section {
+        padding: $padding-sm;
+    }
+
+    .section h2 {
+        font-size: $font-lg;
+    }
+}

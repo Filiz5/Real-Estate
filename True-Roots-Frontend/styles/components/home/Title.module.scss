@@ -1,0 +1,35 @@
+@use '@/styles/variables' as *;
+
+.title {
+  text-align: center;
+  font-size: 6rem;
+  font-weight: bold;
+  color: #ebebf2;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.847);
+
+  // Medya Sorguları
+  @media screen and (max-width: $screen-xl) {
+    font-size: 5rem;
+  }
+
+  @media screen and (max-width: $screen-lg) {
+    font-size: 4rem;
+    margin-bottom: 0.8rem;
+  }
+
+  @media screen and (max-width: $screen-md) {
+    font-size: 3rem;
+    margin-bottom: 0.6rem;
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  @media screen and (max-width: $screen-xs) {
+    font-size: 2rem;
+    margin-bottom: 0.4rem;
+  }
+}

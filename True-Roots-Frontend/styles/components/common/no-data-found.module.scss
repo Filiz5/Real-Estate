@@ -1,0 +1,19 @@
+@use '@/styles/variables' as *;
+
+.no_data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    padding: $padding-3xl;
+    background-color: $clr-smoke;
+    border-radius: $rounded-md;
+    box-shadow: 35px 55px 8px rgba(0, 0, 0, 0.4);
+    text-shadow: 45px 75px 2px rgb(255, 255, 255);
+    text-decoration: underline;
+    margin-top: 50px;
+    font-size: $font-lg;
+}

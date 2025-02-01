@@ -1,0 +1,32 @@
+.messageContainer {  
+  width: 100%;  
+  max-width: 800px; 
+  margin: 0 auto;  
+  padding: 16px;  
+  border-radius: 10px;  
+  background-color: #f8f9fa;  
+}  
+
+.messageContent {  
+  white-space: pre-wrap;  
+  word-wrap: break-word;  
+  overflow-x: auto;  
+  max-width: 100%;  
+  box-sizing: border-box;  
+  font-family: monospace;  
+}  
+
+@media (max-width: 768px) {  
+  .messageContainer {  
+    width: 95%;  
+    padding: 12px;  
+  }  
+}  
+
+@media (max-width: 576px) {  
+  .messageContainer {  
+    width: 50%;
+    margin-left: 0px;  
+    padding: 5px;  
+  }  
+}

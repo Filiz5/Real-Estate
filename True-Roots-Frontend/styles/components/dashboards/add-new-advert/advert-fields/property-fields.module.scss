@@ -1,0 +1,138 @@
+@use '@/styles/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  border: 1px solid $clr-black;
+  padding-bottom: $padding-xl;
+  gap: $gap-md;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: $rounded-xl;
+}
+
+.container p {
+  align-self: start;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 700;
+  margin-top: -10px;
+  margin-left: 50px;
+  background-color: $clr-white;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin-top: 0;
+
+  label {
+    align-self: flex-start;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: $margin-sm;
+  }
+  select {
+    padding: $padding-sm;
+    border-radius: $rounded-xs;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: none;
+    background-color: rgba($clr-lavender-blush, 0.4);
+    box-shadow: 4px 4px 4px 4px rgba($clr-black, 0.3);
+    outline: none;
+    &:focus {
+      box-shadow: 4px 4px 4px 4px rgba($clr-blueberryblue, 0.3);
+    }
+  }
+}
+
+.line1 {
+  display: flex;
+  justify-content: flex-start;
+  width: 90%;
+  gap: $gap-md;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.line2 {
+  display: flex;
+  justify-content: flex-start;
+  width: 90%;
+  gap: $gap-md;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.line3 {
+  display: flex;
+  width: 90%;
+  gap: $gap-md;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.floor {
+  display: flex;
+  flex-direction: column;
+  width: 229px;
+  margin-top: 0;
+  position: relative;
+
+  label {
+    align-self: flex-start;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: $margin-sm;
+  }
+
+  input {
+    padding: $padding-sm;
+    border-radius: $rounded-xs;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: none;
+    background-color: rgba($clr-lavender-blush, 0.4);
+    box-shadow: 4px 4px 4px 4px rgba($clr-black, 0.3);
+    outline: none;
+    &:focus {
+      box-shadow: 4px 4px 4px 4px rgba($clr-blueberryblue, 0.3);
+    }
+  }
+}
+
+.error {
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  background-color: transparent;
+  align-self: flex-start;
+  margin-top: 5px;
+  margin-left: 5px;
+  color: $clr-danger;
+  
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  height: 20px;
+  white-space: nowrap;
+
+  p{
+    margin-top: 0;
+    margin-left: 0;
+    font-size: 12px;
+  }
+  
+}
+
+@media screen and (max-width: $screen-md) {
+  .container {
+    max-width: 750px;
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .container {
+    max-width: 380px;
+    margin-left: 4px;
+  }
+}

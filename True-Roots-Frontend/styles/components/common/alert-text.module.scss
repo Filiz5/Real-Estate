@@ -1,0 +1,42 @@
+@use '@/styles/variables' as *;
+
+.container {
+    font-family: $font-modulus;
+    font-size: $font-md;
+    padding: $padding-sm $padding-md;
+    border-radius: $rounded-sm;
+}
+
+.error {
+    background-color: $clr-danger-light;
+
+    .text {
+        color: $clr-danger-dark;
+    }
+}
+
+.success {
+    background-color: $clr-success-light;
+
+    .text {
+        color: $clr-success-dark;
+    }
+}
+
+@media (max-width: $screen-xl) {
+    .container {
+        padding: $padding-sm;
+    }
+    .text{
+        font-size: $font-sm;
+    }
+}
+
+@media (max-width: $screen-lg) {
+    .container {
+        padding: $padding-xs $padding-sm;
+    }
+    .text{
+        font-size: $font-xs;
+    }
+}

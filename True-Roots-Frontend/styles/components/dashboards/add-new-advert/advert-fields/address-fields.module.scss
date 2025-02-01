@@ -1,0 +1,153 @@
+@use '@/styles/variables' as *;
+
+.address_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  padding-bottom: $padding-xl;
+  gap: $gap-md;
+}
+
+.head_line{
+    display: flex;
+    align-self: start;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: $font-xl;
+    padding-left: $padding-sm;
+    padding-right: $padding-sm;
+    font-weight: bolder;
+}
+
+.selects_container{
+    display: flex;
+    flex-direction: row;
+    gap: $gap-md;
+    width: 90%; 
+}
+
+.country{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0;
+
+    label{
+        align-self: flex-start;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-bottom: $margin-sm;
+    }
+    select{
+        padding: $padding-sm;
+        border-radius: $rounded-xs;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: none;
+         background-color: rgba($clr-lavender-blush, 0.4);
+         box-shadow: 4px 4px 4px 4px rgba($clr-black, 0.3);
+         outline: none;
+         &:focus{
+             box-shadow: 4px 4px 4px 4px rgba($clr-blueberryblue, 0.3);
+         }
+    }
+
+}
+
+.city{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0;
+
+    label{
+        align-self: flex-start;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-bottom: $margin-sm;
+    }
+    select{
+        padding: $padding-sm;
+        border-radius: $rounded-xs;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: none;
+         background-color: rgba($clr-lavender-blush, 0.4);
+         box-shadow: 4px 4px 4px 4px rgba($clr-black, 0.3);
+         outline: none;
+         &:focus{
+             box-shadow: 4px 4px 4px 4px rgba($clr-blueberryblue, 0.3);
+         }
+    }
+
+}
+
+.neigbourhood{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0;
+
+    label{
+        align-self: flex-start;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-bottom: $margin-sm;
+    }
+    select{
+        padding: $padding-sm;
+        border-radius: $rounded-xs;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: none;
+         background-color: rgba($clr-lavender-blush, 0.4);
+         box-shadow: 4px 4px 4px 4px rgba($clr-black, 0.3);
+         outline: none;
+         &:focus{
+             box-shadow: 4px 4px 4px 4px rgba($clr-blueberryblue, 0.3);
+         }
+    }
+
+}
+
+.location{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 0;
+
+    label{
+        align-self: flex-start;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        margin-bottom: $margin-sm;
+    }
+    input{
+        padding: $padding-sm;
+        border-radius: $rounded-xs;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        border: none;
+         background-color: rgba($clr-lavender-blush, 0.4);
+         box-shadow: 4px 4px 4px 4px rgba($clr-black, 0.3);
+         outline: none;
+         &:focus{
+             box-shadow: 4px 4px 4px 4px rgba($clr-blueberryblue, 0.3);
+         }
+    }
+
+}
+
+@media screen and (max-width: $screen-md) {
+    .address_container {
+        max-width: 750px;
+    }
+    
+}
+
+@media screen and (max-width: $screen-sm) {
+    .selects_container{
+        display: flex;
+        flex-direction: column;
+        gap: $gap-md;
+        width: 90%;
+    }
+    .address_container {
+        max-width: 380px;
+        margin-left: 4px;
+    }
+    
+}

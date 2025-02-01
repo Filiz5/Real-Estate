@@ -1,0 +1,24 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+}
+
+
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.innerContainer{
+    flex: 1;
+    margin-bottom: 50px;
+}
+
+.footer{
+  box-shadow: 0px -6px 5px 0px rgba(0,0,0,0.4);
+}

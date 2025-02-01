@@ -1,0 +1,103 @@
+@use '@/styles/variables' as *;
+
+.searchBoxContainer {
+    display: flex;
+    width: 100%; /* Tam genişlik */
+    padding: 10px;
+  }
+  
+  .searchBoxWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aradaki boşlukları yönetmek için */
+    gap: 12px; /* Input ve buton arasındaki boşluk */
+    background-color: #f9f9f9; /* Gri arka plan */
+    padding: 0px ; /* Yastık alanı */
+    border-radius: 10px; /* Köşe yuvarlama */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+  }
+  
+  .searchBoxInput {
+    border: 1px solid #e2e2e2;
+    padding: 16px 16px;
+    border-radius: 10px; /* Yuvarlak köşeler */
+    width: 100%; /* Input tam genişlikte olacak */
+    font-size: 16px;
+    outline: none; /* Odaklandığında kenarlık rengini kaldırmak için */
+    background-color: #fef9fb; /* Açık beyaz/gül renkli arka plan */
+  }
+  
+  .searchIcon {
+    font-size: 32px;
+    color: white; /* White icon color */
+    background-color: #4c8bf5; /* Mavi arka plan */
+    padding: 10px 17px;
+    border-radius: 10px; /* Yuvarlak köşe */
+    cursor: pointer;
+  }
+
+  .searchIcon:hover {
+    background-color: #4067b1; /* Hover durumu */
+  }
+  
+  .addNewButton {
+    background-color: #4c8bf5; /* Mavi arka plan */
+    color: white;
+    padding: 17px 16px;
+    font-size: 14px;
+    border-radius: 10px; /* Yuvarlak köşe */
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    font-weight: 500;
+    width: 20%	;
+  }
+  
+  .addNewButton:hover {
+    background-color: #4067b1; /* Hover durumu */
+  }
+  
+  .addNewButton:focus {
+    outline: none; /* Buton odaklanınca kenarlıkları kaldır */
+  }
+  
+  .searchBoxWrapper input:focus {
+    border-color: #4c8bf5; /* Input kutusu odaklandığında renk değiştir */
+  }
+  
+  
+
+
+@media screen and (max-width: $screen-md){
+  .container{
+    font-size: 3px;
+
+min-width: 25%;
+margin-left: $margin-md;
+padding-left: $padding-md;
+
+
+
+} 
+
+button{
+      
+        .searchIcon{
+            font-size: $font-sm;
+        }
+    
+}
+}
+
+@media screen and (max-width: $screen-sm){
+  .searchBoxContainer{
+    font-size: 2px;
+    max-width: 250px;
+  }
+  .searchBoxWrapper{
+    width: 350px;
+  }
+  .searchBoxInput{
+    width: 300px;
+  }
+}

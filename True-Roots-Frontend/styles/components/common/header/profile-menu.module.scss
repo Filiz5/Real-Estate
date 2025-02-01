@@ -1,0 +1,116 @@
+@use '@/styles/variables' as *;
+
+
+
+.container{
+  display: flex;
+  align-items: center;
+  gap: $gap-lg;
+}
+
+.name{
+  margin: 0 auto;
+  font-size: $font-lg;
+  font-family: $font-akshar;
+  color: $clr-black;
+}
+
+.profile_container{
+  display: flex;
+  align-items: center;
+  gap: $gap-lg;
+}
+
+
+.profileIcon{
+        background-color: $clr-white;
+        position: relative;
+        cursor: pointer;
+        color: $clr-blueberryblue;
+
+}
+
+.profilePopup{
+  position: absolute;
+        top: 75px;
+        background-color: $clr-blueberryblue;
+        color: white;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        z-index: 100;
+        width: 200px;
+        text-align: center;
+        gap: $gap-lg;
+}
+
+.links_container{
+  display: flex;
+  flex-direction: column;
+  gap: $gap-lg;
+
+  margin-bottom: 20px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: $gap-md;
+  text-decoration: none;
+  font-family: $font-akshar;
+  font-size: $font-lg;
+  color: $clr-smoke;
+  position: relative; // Make it a positioning context for the ::after element
+
+  &:hover {
+    color: $clr-purple-light;
+  }
+
+
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px; // Adjust the distance between the text and the line
+    left: 0;
+    width: 0;
+    height: 2px; // Line thickness
+    background-color: $clr-smoke; // Line color
+    transition: width 0.5s ease-in-out; // Smooth transition
+  }
+
+  &:hover::after {
+    width: 100%; // Make the line span the width of the text on hover
+  }
+}
+
+@media screen and (max-width: $screen-xl){
+  .name{
+    font-size: $font-md;
+  }
+
+  .profilePopup{
+    top: 65px;
+  }
+
+  .link{
+    font-size: $font-md;
+  }
+  
+}
+
+@media screen and (max-width: $screen-lg){
+  .namer{
+    font-size: $font-sm;
+  }
+
+  .links_container{
+    gap: $gap-md;
+  }
+
+  .link{
+    font-size: $font-sm;
+  }
+  
+}

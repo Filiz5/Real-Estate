@@ -1,0 +1,144 @@
+/* styles.css */
+@use '@/styles/variables' as *;
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  border: none;
+  background-color: #f7f8fc;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.table th, .table td {
+  padding: 0.75rem;
+  vertical-align: middle;
+  text-align: left;
+  border: none;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(53, 243, 6, 0.075);
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35em 0.65em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  color: #f9fafc;
+  background-color: #007bff;
+  border: none;
+}
+
+.btn-link {
+  font-weight: 400;
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.btn-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+  background-color: transparent; 
+}
+
+.action-button {
+  padding: 0;
+  color: blue;
+  background-color: transparent; 
+}
+
+.action-button:hover {
+  color: #0056b3;
+  text-decoration: underline;
+  background-color: transparent; 
+}
+
+.custom-pagination .page-item .page-link {
+  background-color: transparent !important;
+  border: none !important;
+  color: #007bff !important;
+}
+
+.no-background {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0;
+}
+
+.icon-color {
+  color: #007bff;
+}
+
+.section-title {
+  font-size: $font-xl !important;
+  font-weight: 400 !important;
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  
+}
+
+.section-title::before,
+.section-title::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ccc;
+}
+
+.section-title::before {
+  flex: 0.1;
+ 
+}
+
+.section-title::after {
+  
+}
+
+.section-title span {
+  display: inline-block;
+  padding: 0 10px;
+  border: 1px solid #ccc !important;
+  border-radius: 10px;
+  background-color: white !important;
+  padding: $padding-sm !important;
+
+}
+
+.advert-image {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.action-button {
+  padding: 0;
+  color: blue;
+}
+
+input {
+  background-color: #7286D3;
+  border: 1px solid #7286D3; 
+  padding: 0.5rem; 
+  border-radius: 4px; 
+}
+
+input:focus {
+  outline: none; 
+  border-color: #007bff; 
+}
+
+

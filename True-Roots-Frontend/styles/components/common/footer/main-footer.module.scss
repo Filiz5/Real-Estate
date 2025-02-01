@@ -1,0 +1,61 @@
+@use '@/styles/variables' as *;
+.footer {
+  background-color: $clr-blueberryblue;
+  color: $clr-white;
+  padding: $padding-md $padding-xs $padding-4xl $padding-5xl;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Ensures even spacing between sections */
+  align-items: flex-start; /* Align items at the top */
+  gap: $gap-lg;
+}
+
+.slogan, .quikLinks, .contact {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bottomSection {
+  display: flex; /* Add this to enable gap support */
+  flex-direction: column;
+  align-items: center;
+  margin-top: $margin-xl;
+  text-align: center;
+  
+}
+
+.copyRight {
+  font-size: $font-sm;
+}
+
+@media (max-width: $screen-md) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: $gap-md;
+  }
+  
+  .slogan, .quikLinks, .contact {
+    margin-bottom: $margin-lg;
+  }
+
+  .bottomSection {
+    margin-top: $margin-lg;
+  }
+}
+
+@media (max-width: $screen-xs) {
+  .footer {
+    padding: $padding-sm;
+  }
+  
+  .slogan, .quikLinks, .contact {
+    font-size: $font-sm;
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "phone": "123-456-0987",
+  "email": "auth.user@example.com",
+  "password": "securePassword123",
+  "builtIn": false
+}

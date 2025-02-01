@@ -1,0 +1,143 @@
+@use '@/styles/variables' as *;
+
+
+
+.pagination {
+    margin-top: 4px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: $padding-sm;
+}
+
+.customPagination {
+    display: flex;
+    background-color: transparent !important;
+    border: none !important;
+    color: #007bff !important;
+    
+  }
+
+.pages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $padding-sm;
+    gap: $gap-sm;
+
+}
+
+.prev,
+.next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $padding-sm;
+    cursor: pointer;
+
+    &:hover {
+        color: $clr-blueberryblue;
+    }
+}
+
+.disabled {
+    color: $clr-blueberryblue2;
+    pointer-events: none !important;
+    cursor: not-allowed;
+}
+
+.first {
+    &:first-child {
+        svg {
+            margin-right: -$margin-md;
+        }
+    }
+}
+.last {
+    &:last-child {
+        svg {
+            margin-left: -$margin-md;
+        }
+    }
+}
+
+
+.active{
+    background-color: $clr-blueberryblue;
+    color: $clr-white;
+    pointer-events: none !important;
+    cursor: not-allowed;
+    scale: 1.1;
+
+    &:hover{
+        background-color: $clr-white;
+        color: $clr-black;
+        border: 1px solid $clr-black;
+    }
+}
+
+@media (max-width: $screen-2xl) {
+    .pageItem {
+        width: 40px;
+        height: 40px;
+    }
+
+    .prev,
+    .next {
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+@media (max-width: $screen-xl) {
+    .pageItem {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: $screen-lg) {
+    .prev,
+    .next {
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
+
+@media (max-width: $screen-md) {
+    .pages {
+        gap: $gap-xs;
+    }
+
+    .pageItem {
+        width: 30px;
+        height: 30px;
+        font-size: $font-sm;
+    }
+}
+
+@media (max-width: $screen-sm) {
+    .pagination {
+        padding: $padding-xs;
+    }
+    .pages {
+        gap: $gap-2xs;
+    }
+    .pageItem {
+        width: 25px;
+        height: 25px;
+        font-size: $font-xs;
+    }
+
+    .prev,
+    .next {
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+}

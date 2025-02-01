@@ -1,0 +1,33 @@
+package com.team01.realestate.payload.mapper;
+
+import com.team01.realestate.entity.concretes.business.City;
+import com.team01.realestate.entity.concretes.business.Country;
+import com.team01.realestate.payload.request.CountryRequest;
+import com.team01.realestate.payload.response.business.CountryResponse;
+import org.springframework.stereotype.Component;
+
+import java.util.stream.Collectors;
+
+@Component
+public class CountryMapper {
+
+    // Entity -> DTO (Response)
+    public CountryResponse toResponse(Country country) {
+        return CountryResponse.builder()
+                .id(country.getId())
+                .name(country.getName())
+                .cities(country.getCities() != null
+                        ? country.getCities().stream()
+                            .map(City::getName)
+                            .collect(Collectors.toList())
+                        : null)
+                .build();
+    }
+
+    // DTO -> Entity (Request)
+    public Country toEntity(CountryRequest countryRequest) {
+        return Country.builder()
+                .name(countryRequest.getName())
+                .build();
+    }
+}

@@ -1,0 +1,2655 @@
+{
+	"info": {
+		"_postman_id": "97f53a9b-11c5-4417-a312-71ee4878b84f",
+		"name": "RealEstateTeam01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28010884"
+	},
+	"item": [
+		{
+			"name": "ContactMessageController",
+			"item": [
+				{
+					"name": "save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\t  {\n\t      \"firstName\": \"Emre3\",\n          \"lastName\": \"Emre\",\n\t      \"email\": \"aaa@bbb.com\",\n\t      \"message\": \"emre\"\n\t  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/contact-messages/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contact-messages",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzIxMDQ0NjEsImV4cCI6MTczMjExMzEwMX0.i1sVkBZ0lKAhYviRlYJEErpa92kFrtVRdU9zSwUMAhzffk4j3N5DmVk8st6yylWCt5FeTJsB68A95hz_JRegHw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/contact-messages/get?q=&page=0&size=10&sort=createdAt&type=asc\n",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"contact-messages",
+								"get"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt"
+								},
+								{
+									"key": "type",
+									"value": "asc\n"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserController",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"emresani1998@gmail.com\",\n  \"password\": \"12345678\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@admin.com\",\n  \"password\": \"123456\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImlhdCI6MTcxODkwMTYwOSwiZXhwIjoxNzE4OTEwMjQ5fQ.K45DBHnSPStwJdw_PRDlXO9N8mY-5k8KMhix2J84mk2bBVRRyd5LYKDLGcj0wNVFhW-jpXMJtmhAZoPvpbXYhg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doee\",\n  \"phone\": \"515-515-5553\",\n  \"email\": \"emresani1998@gmail.com\",\n  \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzM0ODgxMDUsImV4cCI6MTczMzQ5Njc0NX0.pqA0w3NtU3gSi36F4z8eZO7D_ZliUNmyN6zXfDUTBYa7_LEEc9uXQNGIgaliaIB4n6lKAyCWUmUu2nzrbktnpw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doee\",\n  \"phone\": \"515-515-5549\",\n  \"email\": \"emresani2@gmail.com\",\n  \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/createUser/Admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"createUser",
+								"Admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"emresani1998@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBZG1pbiIsImlhdCI6MTcxODkwMTYwOSwiZXhwIjoxNzE4OTEwMjQ5fQ.K45DBHnSPStwJdw_PRDlXO9N8mY-5k8KMhix2J84mk2bBVRRyd5LYKDLGcj0wNVFhW-jpXMJtmhAZoPvpbXYhg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"code\": \"ed2402f1-47a7-4ccb-a9e2-c5b4d9c8132a\",\n  \"password\": \"12345679\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAuthenticatedUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMyMDk1Njc3LCJleHAiOjE3MzIxMDQzMTd9.kw2bhcTRbTjfR7HC5qxOEFAeSAxc6MEg9ZHG0Hj4aeNsqPDZR24s00ydU6iVjLhVIsvSUX4H9S5_E3HEvYb09A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllUsersByPageAndFilter",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzIxNzUzNjAsImV4cCI6MTczMjE4NDAwMH0.C1l1j74ZQVRUj67fvjaD3BB0q4TiNRBXzCe5gJ3d_bShzRGrTIYDR67IsCjlDkBUY3uv8dU1x99SuQKqHi4S8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/admin?q=&page=0&size=10&sort=createdAt&type=desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"admin"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": ""
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt"
+								},
+								{
+									"key": "type",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUserById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzIxMDM3NTUsImV4cCI6MTczMjExMjM5NX0.wnbcjUAzUR_AyeLnvHA9eVHDQqfvBwOvUVmC8Y4lFm-zeYdus5basPniT8kUI1609sCm0xi3xPwjvJXONoJ60g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/1/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAuthUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMyMDk2ODU2LCJleHAiOjE3MzIxMDU0OTZ9.kOmT-Npiw6fATGHiWAAfQYfmc-X5UiGJZytV0Hrbeudv0C57pxzBE7rLGVVb0esTMjPqYBf6Zi7mfGJ0a52KTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUserById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzIxNzUzNjAsImV4cCI6MTczMjE4NDAwMH0.C1l1j74ZQVRUj67fvjaD3BB0q4TiNRBXzCe5gJ3d_bShzRGrTIYDR67IsCjlDkBUY3uv8dU1x99SuQKqHi4S8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/2/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"2",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAuthenticatedUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtZW1iZXIxQG1lbWJlci5jb20iLCJpYXQiOjE3MzIwMTUxOTAsImV4cCI6MTczMjAyMzgzMH0.pgCcMdXR6uwP5JiVd5OqgiJrHTdX48MB3VyRqBntXTcffkw3WJM_LEvaMfk955h0bATCmjmTo7plsfL-vte5NQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"JohnUpdated\",\n  \"lastName\": \"Doeed\",\n  \"phone\": \"515-515-5554\",\n  \"email\": \"member1@member.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzIxNzUzNjAsImV4cCI6MTczMjE4NDAwMH0.C1l1j74ZQVRUj67fvjaD3BB0q4TiNRBXzCe5gJ3d_bShzRGrTIYDR67IsCjlDkBUY3uv8dU1x99SuQKqHi4S8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstName\": \"JohnUpdated\",\n  \"lastName\": \"Doeed\",\n  \"phone\": \"515-515-5554\",\n  \"email\": \"member1@member.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/2/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"2",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePasswordSelf",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMyMDkzOTkyLCJleHAiOjE3MzIxMDI2MzJ9.SOljbHYncZkuc4Pt4WhQQ1GH40h34igtQjOErhttBl-oNZq4sQfVoT7F6AgfAjRR0UyrxA_y7cw-u_xiOaOjaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"oldPassword\": \"12345678\",\n  \"newPassword\": \"12345679\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AdvertTypes",
+			"item": [
+				{
+					"name": "createAdvertType",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzI0Mzg0NzIsImV4cCI6MTczMjQ0NzExMn0.pkPlwUzMODgMqJdSJ8VNsnm0udfIAQabqlJLZRALN1cJ6O0x8obHCcqmvLdaJiVDjYHJ9EoHW2iI14P_fjldSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"title\":\"For Sale\",\n\"builtIn\":true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/advert-types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"advert-types"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "getAdvertTypeById",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzI0Mzg0NzIsImV4cCI6MTczMjQ0NzExMn0.pkPlwUzMODgMqJdSJ8VNsnm0udfIAQabqlJLZRALN1cJ6O0x8obHCcqmvLdaJiVDjYHJ9EoHW2iI14P_fjldSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/advert-types/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"advert-types",
+								"1"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAdvertTypeById",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful DELETE request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 202, 204]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzI0Mzg0NzIsImV4cCI6MTczMjQ0NzExMn0.pkPlwUzMODgMqJdSJ8VNsnm0udfIAQabqlJLZRALN1cJ6O0x8obHCcqmvLdaJiVDjYHJ9EoHW2iI14P_fjldSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/advert-types/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"advert-types",
+								"1"
+							]
+						},
+						"description": "This is a DELETE request, and it is used to delete data that was previously created via a POST request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful DELETE request typically returns a `200 OK`, `202 Accepted`, or `204 No Content` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAdvertTypeById",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful PUT request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 204]);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzI0Mzg0NzIsImV4cCI6MTczMjQ0NzExMn0.pkPlwUzMODgMqJdSJ8VNsnm0udfIAQabqlJLZRALN1cJ6O0x8obHCcqmvLdaJiVDjYHJ9EoHW2iI14P_fjldSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\":\"For Rent\",\n  \"builtIn\":true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/advert-types/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"advert-types",
+								"2"
+							]
+						},
+						"description": "This is a PUT request and it is used to overwrite an existing piece of data. For instance, after you create an entity with a POST request, you may want to modify that later. You can do that using a PUT request. You typically identify the entity being updated by including an identifier in the URL (eg. `id=1`).\n\nA successful PUT request typically returns a `200 OK`, `201 Created`, or `204 No Content` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "advertTypesGetAll",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/advert-types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"advert-types"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "categoryGetAllPageable",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categories?q=e&page=0&size=20&sort=createdAt&type=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "e"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt"
+								},
+								{
+									"key": "type",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzI3MDU3NTIsImV4cCI6MTczMjcxNDM5Mn0.mtCufepR6zJ-vA1XebfPsuI6w3JMG1iSB0vaypy0UbSIbJSYUB_CRNRYZbroxeqnZ1AXr4zyLSqfUqIjx7qydw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Sample Category Title\",\n  \"icon\": \"sample-icon.png\",\n  \"builtIn\": false,\n  \"seq\": 1,\n  \"slug\": \"sample-category-title2\",\n  \"isActive\": true\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategoriesById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzI3MDU3NTIsImV4cCI6MTczMjcxNDM5Mn0.mtCufepR6zJ-vA1XebfPsuI6w3JMG1iSB0vaypy0UbSIbJSYUB_CRNRYZbroxeqnZ1AXr4zyLSqfUqIjx7qydw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categories/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzI3MDU3NTIsImV4cCI6MTczMjcxNDM5Mn0.mtCufepR6zJ-vA1XebfPsuI6w3JMG1iSB0vaypy0UbSIbJSYUB_CRNRYZbroxeqnZ1AXr4zyLSqfUqIjx7qydw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n  \"title\": \"Yeni Kategori\",  \r\n  \"icon\": \"yeni_icon.png\",  \r\n  \"builtIn\": false,  \r\n  \"seq\": 1,  \r\n  \"slug\": \"yeni-kategori\",  \r\n  \"isActive\": true  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategoryById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzMzMDI3NzYsImV4cCI6MTczMzMxMTQxNn0.qVqdwb2jFjc7tmvouuEM6YySxQ2WYGAq7R7kD1sNXK1FSQnxnBrlhj42-N32J0xuDpaSD7dxKvdKORjK_dLcMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categories/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategoryIdProperties",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzI3MDU3NTIsImV4cCI6MTczMjcxNDM5Mn0.mtCufepR6zJ-vA1XebfPsuI6w3JMG1iSB0vaypy0UbSIbJSYUB_CRNRYZbroxeqnZ1AXr4zyLSqfUqIjx7qydw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/categories/1/properties",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"1",
+								"properties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCategoryProperties",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzI3MDU3NTIsImV4cCI6MTczMjcxNDM5Mn0.mtCufepR6zJ-vA1XebfPsuI6w3JMG1iSB0vaypy0UbSIbJSYUB_CRNRYZbroxeqnZ1AXr4zyLSqfUqIjx7qydw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Kat Sayısı\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories/2/properties",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"2",
+								"properties"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategoriesProperties",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzI3MDU3NTIsImV4cCI6MTczMjcxNDM5Mn0.mtCufepR6zJ-vA1XebfPsuI6w3JMG1iSB0vaypy0UbSIbJSYUB_CRNRYZbroxeqnZ1AXr4zyLSqfUqIjx7qydw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"eskidendi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/categories/properties/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"properties",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "getAllCity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllCountry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/countries",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"countries"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllDistricts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/districts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"districts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "AdvertControler",
+			"item": [
+				{
+					"name": "createAdvert",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Beautiful villa\",\n  \"desc\": \"A luxurious villa located in the heart of the city with all modern amenities.\",\n  \"price\": 750000.50,\n  \"advert_type_id\": 1,\n  \"country_id\": 3,\n  \"city_id\": 1,\n  \"district_id\": 3,\n  \"category_id\": 1,\n  \"location\": \"https://maps.google.com/?q=41.0082,28.9784\",\n  \"properties\": [\n    {\n      \"id\": 1,\n      \"value\": \"5\"\n    },\n    {\n      \"id\": 2,\n      \"value\": \"kalorifer\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/adverts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adverts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdvertsGroupedByCity",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Beautiful Villa in City Center\",\n  \"desc\": \"A luxurious villa located in the heart of the city with all modern amenities.\",\n  \"price\": 750000.50,\n  \"advert_type_id\": 2,\n  \"country_id\": 1,\n  \"city_id\": 1,\n  \"district_id\": 1,\n  \"category_id\": 1,\n  \"images\": [\n    {\n      \"id\": 1,\n      \"url\": \"https://example.com/images/villa1.jpg\"\n    },\n    {\n      \"id\": 2,\n      \"url\": \"https://example.com/images/villa2.jpg\"\n    }\n  ],\n  \"location\": \"https://maps.google.com/?q=41.0082,28.9784\",\n  \"properties\": [\n    {\n      \"categoryPropertyKey\": {\n        \"id\": 101\n      },\n      \"value\": \"5\"\n    },\n    {\n      \"categoryPropertyKey\": {\n        \"id\": 102\n      },\n      \"value\": \"2\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/adverts/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adverts",
+								"cities"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdvertsGroupedByCategory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Beautiful Villa in City Center\",\n  \"desc\": \"A luxurious villa located in the heart of the city with all modern amenities.\",\n  \"price\": 750000.50,\n  \"advert_type_id\": 2,\n  \"country_id\": 1,\n  \"city_id\": 1,\n  \"district_id\": 1,\n  \"category_id\": 1,\n  \"images\": [\n    {\n      \"id\": 1,\n      \"url\": \"https://example.com/images/villa1.jpg\"\n    },\n    {\n      \"id\": 2,\n      \"url\": \"https://example.com/images/villa2.jpg\"\n    }\n  ],\n  \"location\": \"https://maps.google.com/?q=41.0082,28.9784\",\n  \"properties\": [\n    {\n      \"categoryPropertyKey\": {\n        \"id\": 101\n      },\n      \"value\": \"5\"\n    },\n    {\n      \"categoryPropertyKey\": {\n        \"id\": 102\n      },\n      \"value\": \"2\"\n    }\n  ]\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/adverts/categories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adverts",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdvertsWithSearchParameter",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/adverts?q=&categoryId=1&advertType=1&priceStart=750000&priceEnd=750000.50&status=0&page=0&size=10&sort=createdAt&type=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adverts"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": ""
+								},
+								{
+									"key": "categoryId",
+									"value": "1"
+								},
+								{
+									"key": "advertType",
+									"value": "1"
+								},
+								{
+									"key": "priceStart",
+									"value": "750000"
+								},
+								{
+									"key": "priceEnd",
+									"value": "750000.50"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt"
+								},
+								{
+									"key": "type",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdvertsWithSearchParameterForAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzMzMDI3NzYsImV4cCI6MTczMzMxMTQxNn0.qVqdwb2jFjc7tmvouuEM6YySxQ2WYGAq7R7kD1sNXK1FSQnxnBrlhj42-N32J0xuDpaSD7dxKvdKORjK_dLcMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/adverts/admin?q=Sefa&categoryId=&advertType=&priceStart=75&priceEnd=750000.50&status=0&page=0&size=10&sort=createdAt&type=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adverts",
+								"admin"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "Sefa"
+								},
+								{
+									"key": "categoryId",
+									"value": ""
+								},
+								{
+									"key": "advertType",
+									"value": ""
+								},
+								{
+									"key": "priceStart",
+									"value": "75"
+								},
+								{
+									"key": "priceEnd",
+									"value": "750000.50"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt"
+								},
+								{
+									"key": "type",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPopularAdverts",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/adverts/popular",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adverts",
+								"popular"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdvertBySlug",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/adverts/beautiful-villa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adverts",
+								"beautiful-villa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAuthenticatedUsersAdverts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/adverts/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adverts",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAuthenticatedUsersAdvertById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/adverts/2/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adverts",
+								"2",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdvertByIdForAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzMzMDI3NzYsImV4cCI6MTczMzMxMTQxNn0.qVqdwb2jFjc7tmvouuEM6YySxQ2WYGAq7R7kD1sNXK1FSQnxnBrlhj42-N32J0xuDpaSD7dxKvdKORjK_dLcMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/adverts/2/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adverts",
+								"2",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G11 - updateAuthenticatedUsersAdvertById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzNDMxNjQyLCJleHAiOjE3MzM0NDAyODJ9.y6OttZM0nUgrZbbUt7dmyI8ETbXg2AZPtlKcWTVPGyHsC3-WyYFOci_ONQl9BjfhFV2KlBt2OHnLEN54bAiZlg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"New Beautiful Villa\",\r\n    \"desc\": \"A luxurious villa located in the heart of the city with all modern amenities.\",\r\n    \"price\": 750000.50,\r\n    \"advertStatus\": \"PENDING\",\r\n    \"advert_type_id\":\"1\",\r\n    \"country_id\":\"3\",\r\n    \"city_id\":\"1\",\r\n    \"district_id\":\"3\",\r\n    \"category_id\":\"1\",\r\n    \"properties\": [\r\n        {\r\n            \"id\": 3,\r\n            \"value\": \"5\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"value\": \"kalorifer\"\r\n        }\r\n        \r\n    ],\r\n    \"isActive\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/adverts/auth/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"adverts",
+								"auth",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G12 - updateAdvertById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzM0MzE2MzYsImV4cCI6MTczMzQ0MDI3Nn0.goujLUQgI_KeBZdpBkDsr-Ic_k5wq_-MzbGV_PPlR3Mqx94O3W-x49s5T-lBEh_0zMrmdiDztnh7CvZGXCEFtw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"New Beautiful Villa\",\r\n    \"desc\": \"A luxurious villa located in the heart of the city with all modern amenities.\",\r\n    \"price\": 750000.50,\r\n    \"advertStatus\": \"PENDING\",\r\n    \"advert_type_id\":\"1\",\r\n    \"country_id\":\"3\",\r\n    \"city_id\":\"1\",\r\n    \"district_id\":\"3\",\r\n    \"category_id\":\"1\",\r\n    \"properties\": [\r\n        {\r\n            \"id\": 3,\r\n            \"value\": \"5\"\r\n        },\r\n        {\r\n            \"id\": 4,\r\n            \"value\": \"kalorifer\"\r\n        }\r\n        \r\n    ],\r\n    \"isActive\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/admin/auth/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"auth",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "G13 - deleteAdvert",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzM0MzE2MzYsImV4cCI6MTczMzQ0MDI3Nn0.goujLUQgI_KeBZdpBkDsr-Ic_k5wq_-MzbGV_PPlR3Mqx94O3W-x49s5T-lBEh_0zMrmdiDztnh7CvZGXCEFtw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/admin/auth/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"auth",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image",
+			"item": [
+				{
+					"name": "getImageById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2ZWxpa2tvbUBnbWFpbC5jb20iLCJpYXQiOjE3MzI1MjU3MDYsImV4cCI6MTczMjUzNDM0Nn0.bEno39i-0_txhMDjR04_-CHqtX57yQ1Osd77LbJQRYa7CDNCXMizh9O-ibExDFTPXPkFRmrisZAQ0GYHEWil4w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/images/2/get",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"images",
+								"2",
+								"get"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UploadImage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2ZWxpa2tvbUBnbWFpbC5jb20iLCJpYXQiOjE3MzI1MjUxNTksImV4cCI6MTczMjUzMzc5OX0.t8U7NQnz6Pwy2PCsIDr5reuYJwG5u76pvr4iMsxkYlmBDA8H5gxEDO4sXC7OjoQw3VkGObTvMmn1j13LsapVuw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"description": "house",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "postman-cloud:///1efa8c32-6f42-4bc0-90fc-6e4b72b75c39",
+									"disabled": true
+								},
+								{
+									"key": "files",
+									"type": "file",
+									"src": "postman-cloud:///1efa8c37-4227-48c0-8f01-3fb42796a226"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/images/1/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"images",
+								"1",
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteImage",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2ZWxpa2tvbUBnbWFpbC5jb20iLCJpYXQiOjE3MzI1MzI3NTQsImV4cCI6MTczMjU0MTM5NH0.HSWgRCgggloZCyph6MUgwaog7pvywKbKq8Y4dZxLyOjfv1SKMwf6KMGkQcmKfh6u9jfk2dJA9IrFguVQjL6J2Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/images/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"images",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateImageFeatureStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ2ZWxpa2tvbUBnbWFpbC5jb20iLCJpYXQiOjE3MzI1MzI3NTQsImV4cCI6MTczMjU0MTM5NH0.HSWgRCgggloZCyph6MUgwaog7pvywKbKq8Y4dZxLyOjfv1SKMwf6KMGkQcmKfh6u9jfk2dJA9IrFguVQjL6J2Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"featured\": true\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/images/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"images",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "TourRequest",
+			"item": [
+				{
+					"name": "createTourRequest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tourDate\":\"2024-12-26T14:35:00\",\r\n    \"tourTime\":\"2024-12-26T14:35:00\",\r\n    \"advertId\":\"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tour-requests",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tour-requests"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTourRequestsByAuthUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tour-requests/auth?q=a&page=0&size=10&sort=createdAt&type=desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tour-requests",
+								"auth"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "a"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt"
+								},
+								{
+									"key": "type",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAllTourRequestByPageForAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzMzMDI3NzYsImV4cCI6MTczMzMxMTQxNn0.qVqdwb2jFjc7tmvouuEM6YySxQ2WYGAq7R7kD1sNXK1FSQnxnBrlhj42-N32J0xuDpaSD7dxKvdKORjK_dLcMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tour-requests/admin?q=a&page=0&size=10&sort=createdAt&type=desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tour-requests",
+								"admin"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "a"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "createdAt"
+								},
+								{
+									"key": "type",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTourRequestDetailForAuthUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tour-requests/1/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tour-requests",
+								"1",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTourRequestDetailForAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzMzMDI3NzYsImV4cCI6MTczMzMxMTQxNn0.qVqdwb2jFjc7tmvouuEM6YySxQ2WYGAq7R7kD1sNXK1FSQnxnBrlhj42-N32J0xuDpaSD7dxKvdKORjK_dLcMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/tour-requests/1/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tour-requests",
+								"1",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTourRequestForUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tourDate\":\"2024-12-29T14:35:00\",\r\n    \"tourTime\":\"2024-12-29T14:35:00\",\r\n    \"advertId\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tour-requests/1/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tour-requests",
+								"1",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cancelTourRequestForUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tour-requests/1/cancel",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tour-requests",
+								"1",
+								"cancel"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approveTourRequestForUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tour-requests/2/approve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tour-requests",
+								"2",
+								"approve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "declineTourRequestForUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tour-requests/3/decline",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tour-requests",
+								"3",
+								"decline"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTourRequestForAdminAndManager",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzMzMDI3NzYsImV4cCI6MTczMzMxMTQxNn0.qVqdwb2jFjc7tmvouuEM6YySxQ2WYGAq7R7kD1sNXK1FSQnxnBrlhj42-N32J0xuDpaSD7dxKvdKORjK_dLcMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/tour-requests/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"tour-requests",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Favorite",
+			"item": [
+				{
+					"name": "getFavoritesByAuthUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/favorites/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"favorites",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getFavoriteByUserIdForAdmin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzMzMDI3NzYsImV4cCI6MTczMzMxMTQxNn0.qVqdwb2jFjc7tmvouuEM6YySxQ2WYGAq7R7kD1sNXK1FSQnxnBrlhj42-N32J0xuDpaSD7dxKvdKORjK_dLcMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/favorites/admin/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"favorites",
+								"admin",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "toggleFavorite",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/favorites/2/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"favorites",
+								"2",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeAllFavoritesCustomer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJlbXJlc2FuaTE5OThAZ21haWwuY29tIiwiaWF0IjoxNzMzMzAzMDYzLCJleHAiOjE3MzMzMTE3MDN9.55hBOWRBjp9nm5qPAjfU7azKzNlh8CZosXHH9cEPs5RVx-4HYkFeRHTfz3y6qyHKJyagC5MA63Z9zucdCefb8A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/favorites/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"favorites",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeAllFavoritesAdminManager",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzMzMDI3NzYsImV4cCI6MTczMzMxMTQxNn0.qVqdwb2jFjc7tmvouuEM6YySxQ2WYGAq7R7kD1sNXK1FSQnxnBrlhj42-N32J0xuDpaSD7dxKvdKORjK_dLcMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/favorites/admin/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"favorites",
+								"admin",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "removeFavoriteAdminManager",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzMzMDI3NzYsImV4cCI6MTczMzMxMTQxNn0.qVqdwb2jFjc7tmvouuEM6YySxQ2WYGAq7R7kD1sNXK1FSQnxnBrlhj42-N32J0xuDpaSD7dxKvdKORjK_dLcMQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/favorites/9/admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"favorites",
+								"9",
+								"admin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports",
+			"item": [
+				{
+					"name": "getStatistics",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzM0OTMwODAsImV4cCI6MTczMzUwMTcyMH0.TWr7dSWKQT_-9TDIdV6Up36kxPVAUbD_NWq2OZq4kKIkzKNaJQM6WJ_I1d-XLSRJ5wN3jmkrKHSIcfSxgx1DTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAdvertsReports",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzM0OTMwODAsImV4cCI6MTczMzUwMTcyMH0.TWr7dSWKQT_-9TDIdV6Up36kxPVAUbD_NWq2OZq4kKIkzKNaJQM6WJ_I1d-XLSRJ5wN3jmkrKHSIcfSxgx1DTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/adverts?date1=2024-12-01T10:00:00&date2=2024-12-05T10:00:00&category=Sample Category Title&type=For Sale&status=PENDING",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"adverts"
+							],
+							"query": [
+								{
+									"key": "date1",
+									"value": "2024-12-01T10:00:00"
+								},
+								{
+									"key": "date2",
+									"value": "2024-12-05T10:00:00"
+								},
+								{
+									"key": "category",
+									"value": "Sample Category Title"
+								},
+								{
+									"key": "type",
+									"value": "For Sale"
+								},
+								{
+									"key": "status",
+									"value": "PENDING"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getPopularAdverts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzM0OTMwODAsImV4cCI6MTczMzUwMTcyMH0.TWr7dSWKQT_-9TDIdV6Up36kxPVAUbD_NWq2OZq4kKIkzKNaJQM6WJ_I1d-XLSRJ5wN3jmkrKHSIcfSxgx1DTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/most-popular-properties?amount=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"most-popular-properties"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getReportUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzM0OTMwODAsImV4cCI6MTczMzUwMTcyMH0.TWr7dSWKQT_-9TDIdV6Up36kxPVAUbD_NWq2OZq4kKIkzKNaJQM6WJ_I1d-XLSRJ5wN3jmkrKHSIcfSxgx1DTA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/users/CUSTOMER",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"users",
+								"CUSTOMER"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getTourRequestReports",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBhZG1pbi5jb20iLCJpYXQiOjE3MzMzNDUyMDQsImV4cCI6MTczMzM1Mzg0NH0.at9cQPdk9TjO_dcgjufi0hIb6V5CbpTkYZ18m79U8rCvh8UXww4AwlBBaBwKKood0WWNeJb6kHZD1Y7RACesPA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/report/tour-requests?date1=2024-12-01T10:00:00&date2=2024-12-30T10:00:00&status=DECLINED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"report",
+								"tour-requests"
+							],
+							"query": [
+								{
+									"key": "date1",
+									"value": "2024-12-01T10:00:00"
+								},
+								{
+									"key": "date2",
+									"value": "2024-12-30T10:00:00"
+								},
+								{
+									"key": "status",
+									"value": "DECLINED"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

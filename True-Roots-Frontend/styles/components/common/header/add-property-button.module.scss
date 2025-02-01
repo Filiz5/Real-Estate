@@ -1,0 +1,115 @@
+@use '@/styles/variables' as *;
+
+.addPropertyButtonLink {
+  display: flex;
+  align-items: center;  
+  justify-content: center;  
+  text-align: right;
+  text-decoration: none;
+  padding: $padding-2xs  $padding-2xs $padding-2xs $padding-3xl;
+  margin: $margin-md $margin-xl;
+  border: 2px solid $clr-black-light; 
+  border-radius: $rounded-2xl; 
+  background-color: #fff;  
+  transition: all 0.3s ease; 
+  font-size: $font-5xl;
+  font-family: $font-akshar;
+
+  &:hover {
+    background-color: $clr-purple-medium;  
+    color: #fff;
+    border-color: $clr-black; 
+  }
+  
+  
+  gap: $gap-2xs;
+}
+
+.spanText {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  font-family: $font-akshar;
+  font-size: $font-md;
+  color: $clr-black;
+  margin-right: $gap-sm; 
+
+}
+
+.addPropertyButtonLink img {
+  display: block;  
+  margin-left: $gap-sm; 
+}
+
+@media screen and (max-width: $screen-lg){
+  .addPropertyButtonLink {
+    padding: $padding-2xs $padding-2xs $padding-2xs $padding-2xl;
+    margin: $margin-md $margin-xl;
+    font-size: $font-xs;
+  }
+
+  .Image{
+    width: 20px;
+    height: 25px;
+  }
+  
+}
+
+
+@media (max-width: $screen-md) {
+
+    .addPropertyButtonLink img {
+    display: none;  
+
+}
+.spanText {
+  font-family: $font-akshar;
+  font-size: $font-lg;
+  margin-right: $gap-sm;
+  padding-right: 14%;
+
+&:hover{
+  color: $clr-purple-dark;
+}}
+  .addPropertyButtonLink{
+    border: none;
+    background-color:  transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-akshar;
+    padding-top: $padding-lg;
+    position: relative;
+  &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -2px;
+      left: $position-md;
+      width: 0;
+      height: 2px;
+      background-color: $clr-black;
+      margin: -5px auto;
+      
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: scaleX(0); 
+      
+     
+    }
+
+       &:hover {
+      background-color: transparent;
+      
+    }
+
+
+    &:hover::after {
+   
+    opacity: 1;
+    transform: scaleX(1); 
+    width: 50px;
+     
+    }
+  }
+}

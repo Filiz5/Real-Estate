@@ -1,0 +1,32 @@
+@use '@/styles/variables' as *;
+
+.mainMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuList {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  gap: $gap-lg;
+ 
+}
+
+.menuItem {
+  margin: 0 10px;
+}
+
+@media (max-width: $screen-md){
+  .menuList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $gap-xl;
+  padding: 0;
+  margin: 0;
+ 
+}
+}

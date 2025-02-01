@@ -1,0 +1,4 @@
+package com.team01.realestate.payload.request.business;
+
+public class ImageRequest {
+}

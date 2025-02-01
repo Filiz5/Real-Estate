@@ -1,0 +1,174 @@
+@use '@/styles/variables' as *;
+
+.layoutContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: row;
+  gap: 5%;
+  margin: 3rem;
+ 
+ 
+
+  
+  
+  
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+   
+
+
+  
+}
+.advertImageLoader{
+  
+  display: flex;
+  flex-wrap: wrap;
+  gap: $gap-xl;
+  justify-content: center;
+
+ 
+ 
+}
+
+.sidebar {
+  width: 350px;
+  min-width: 325px;
+  height: 100%;
+  background-color: $clr-purple-lighter;
+  padding: 20px;
+  position: fixed;
+  top: 60px;
+  transition: left 0.3s ease;
+  border-radius: $rounded-md; /* Rounded corners */
+  box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.filterButton {
+  width: 20%;
+  padding: 10px;
+  background-color: $clr-blueberryblue2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  bottom: 20px;
+  font-size: $font-lg;
+  margin: 10px auto;
+  margin-bottom: $margin-lg  ;
+  
+}
+
+
+.filterButton:hover {
+  background-color: $clr-blueberryblue;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $clr-purple-lighter;
+  border-bottom: 2px solid #ccc;
+  padding: $padding-md;
+  border-radius: 5px;
+}
+
+.filterTitle {
+  font-family: $font-akshar;
+  font-size: $font-xl;
+  color: $clr-black-light;
+}
+
+.closeButton {
+  padding: 8px;
+  color: $clr-black-light;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: $font-xl;
+  z-index: 1000;
+}
+
+
+
+.pagination {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+@media (max-width: 768px) {
+  
+
+  .sidebar {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding-top: 60px;
+  
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .filterButton {
+    display: block;
+  }
+
+  .closeButton {
+    display: block;
+  }
+
+  .sidebarHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Above sidebar content */
+  }
+.layoutContainer {
+  justify-content: center;
+  gap: 0%;
+  margin: 0rem;
+}
+
+  
+}
+
+@media (min-width: $screen-md) {
+  .sidebar {
+    position: static;
+    width: 300px;
+  }
+
+  .filterButton {
+    display: none;
+  }
+
+  .closeButton {
+    display: none;
+  }
+
+  
+  
+}

@@ -1,0 +1,18 @@
+@use '@/styles/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: $padding-xl;
+  width: 100%;
+  gap: $gap-2xl;
+}
+
+@media screen and (max-width: $screen-sm){
+    .container{
+      width: 390px;
+      margin: 0 auto;
+    }
+  
+}

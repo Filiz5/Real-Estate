@@ -1,0 +1,30 @@
+.searchContainer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.searchInput {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  margin-right: 8px;
+  flex: 1;
+}
+
+.searchIcon {
+  margin-right: 16px;
+  color: #888;
+}
+
+.addButton {
+  padding: 10px 20px;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+} 

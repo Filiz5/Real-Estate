@@ -1,0 +1,57 @@
+@use '@/styles/variables' as *;
+
+
+.searchBoxContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-family: $font-akshar;
+    gap: $gap-md;
+    
+}
+
+.searchBoxTitle{
+    color: $clr-black;
+    font-size: $font-lg;
+}
+
+.searchBoxWrapper{
+    display: flex;
+    justify-content: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    gap: $gap-sm;
+    color: $clr-blueberryblue;
+    border: 1px solid $clr-blueberryblue;
+    border-radius: $rounded-sm;
+    transition: border-color 0.3s;
+
+    
+}
+
+.searchIcon{
+    font-size: $font-2xl;
+    padding-left: $padding-sm;
+}
+
+
+.searchBoxInput{
+    flex: 1;
+    color: $clr-blueberryblue;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+     font-size: $font-sm;
+
+    &::placeholder{
+        color: $clr-blueberryblue;
+    }
+
+    
+
+    
+}

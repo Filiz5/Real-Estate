@@ -1,0 +1,22 @@
+{
+  "httpStatus": "CREATED",
+  "message": "Images saved successfully",
+  "object": [
+    {
+      "id": 1,
+      "name": "Sample Image",
+      "type": "jpg",
+      "featured": true,
+      "advert_id": 1,
+      "data": "base64EncodedDataHere"
+    },
+    {
+      "id": 2,
+      "name": "Another Image",
+      "type": "png",
+      "featured": false,
+      "advert_id": 1,
+      "data": "anotherBase64EncodedData"
+    }
+  ]
+}

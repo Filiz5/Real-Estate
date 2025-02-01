@@ -1,0 +1,126 @@
+@use '@/styles/variables.scss' as *;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: 2rem auto;
+  height: 500px;
+  background: linear-gradient(90deg, $clr-light-purple 0%, $clr-blueberryblue 100%);
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden; // Prevent any overflow issues
+  box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.4);
+}
+
+.text_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; // Align the text to the left
+  justify-content: center;
+  margin-bottom: 10px;
+  z-index: 2;
+
+  h1{
+    padding-bottom: $padding-md;
+    color: $clr-black;
+    background: linear-gradient(270deg,$clr-blueberryblue 100%, $clr-white 0%);
+    -webkit-background-clip: text;
+  }
+}
+
+
+
+.carousel {
+  position: absolute;
+   bottom: -50px; // Push the image slightly out of the container's bottom
+  right: -50px; // Adjust image position
+  z-index: 1; // Place behind the text
+}
+
+.carouselImage {
+  width: 120%; // Make the image larger than the container to overflow
+  border-radius: 15px; // Optional, to match the container
+}
+
+@media screen and (max-width: $screen-xl) {
+  .carousel {
+  position: absolute;
+   bottom: -50px; // Push the image slightly out of the container's bottom
+  right: -100px; // Adjust image position
+  z-index: 1; // Place behind the text
+}
+
+  .carouselImage{
+    width: 600px;
+    height: 330px;
+  }
+  
+}
+
+@media screen and (max-width: $screen-lg) {
+  .carousel {
+  position: absolute;
+   bottom: -50px; // Push the image slightly out of the container's bottom
+  right: -100px; // Adjust image position
+  z-index: 1; // Place behind the text
+}
+
+  .carouselImage{
+    width: 500px;
+    height: 290px;
+  }
+  
+}
+
+@media screen and (max-width: $screen-md) {
+  .container {
+    flex-direction: column;
+    height: 350px;
+  }
+
+  .text_container {
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .carousel {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    z-index: 1;
+  }
+
+  .carouselImage {
+    width: 120%;
+    border-radius: 15px;
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .container {
+    box-shadow: none;
+    flex-direction: column;
+    height: 500px;
+  }
+
+  .text_container {
+    margin-bottom: 0;
+    text-align: center;
+    z-index: 0;
+  }
+
+  .carousel {
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    z-index: 0;
+  }
+
+  .carouselImage {
+    width: 120%;
+    border-radius: 15px;
+  }
+}

@@ -1,0 +1,55 @@
+@use '@/styles/variables' as *;
+
+.PropertyTypeContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-md;
+  font-family: $font-akshar;
+  width: 100%;
+
+  p {
+    font-size: $font-lg;
+    
+  }
+
+  .PropertyTypeInputs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; /* Wrap the options if space is limited */
+    gap: $gap-md;
+    color: $clr-black-light;
+  }
+
+  .label {
+    display: flex;
+    align-items: center;
+    gap: $gap-sm;
+    font-size: $font-md;
+    color: $clr-black-light;
+    cursor: pointer;
+
+    input[type='radio'] {
+      /* Default radio button style */
+      appearance: none; /* Remove the default browser styling */
+      width: 20px;
+      height: 20px;
+      border: 2px solid $clr-blueberryblue;
+      border-radius: 50%;
+      outline: none;
+      background-color: $clr-white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:checked {
+        border-color: $clr-blueberryblue; /* Change border color when checked */
+        background-color: $clr-blueberryblue; /* Add color inside the radio */
+      }
+
+      &:hover {
+        border-color: $clr-blueberryblue2; /* Highlight border on hover */
+      }
+    }
+
+    
+  }
+}

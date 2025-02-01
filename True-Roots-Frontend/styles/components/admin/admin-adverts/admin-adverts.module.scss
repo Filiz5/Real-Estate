@@ -1,0 +1,54 @@
+@use '@/styles/variables' as *;
+
+.main_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.no_adverts{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    padding: $padding-3xl;
+    background-color: $clr-smoke;
+    border-radius: $rounded-md;
+    box-shadow: 35px 55px 8px rgba(0, 0, 0, 0.4);
+    text-shadow: 45px 75px 2px rgb(255, 255, 255);
+    text-decoration: underline;
+    margin-top: 50px;
+    font-size: $font-lg;
+}
+
+.advert_list{
+    display: flex;
+    flex-direction: column;
+    gap: $gap-md;
+    width: 100%;
+}
+
+@media screen and (max-width: $screen-md){
+    .main_container{
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: $screen-sm){
+    .main_container{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .advert_list{
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+    }
+    
+}

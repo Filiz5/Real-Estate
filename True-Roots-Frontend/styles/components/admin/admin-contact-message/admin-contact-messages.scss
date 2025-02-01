@@ -1,0 +1,267 @@
+@import "@/styles/_variables.scss";
+
+.search-container {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background-color: #FFF3F3;
+  padding: 10px;
+  border-radius: 15px;
+  input {
+    flex-grow: 1;
+    margin-right: 1px;
+    min-width: 200px;
+  }
+  button {
+    margin-right: 10px;
+    flex-shrink: 0;
+  }
+}
+
+.message-list {
+  text-align: center;
+}
+
+.card-custom {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  overflow: hidden;
+  max-height: 350px;
+}
+
+.card-custom .card-body {
+  flex-grow: 1;
+}
+
+.message-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.message-item.read {
+  background-color: #FFF3F3;
+}
+
+.message-item.unread {
+  background-color: #c0babb;
+}
+
+.message-item.selected {
+  background-color: rgba(0, 123, 255, 0.2);
+  border: 1px solid #007bff;
+}
+
+.message-item .form-check-input:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.message-item .text-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message-item .text-end {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.read-icon {
+  color: green;
+  font-size: 1.2em;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .active {
+    background-color: #007BFF;
+    color: white;
+  }
+}
+
+.btn-link {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+}
+
+.text-primary {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  align-items: center;
+  justify-content: space-between;
+  &:hover {
+    color: #0056B3;
+    text-decoration: none;
+  }
+}
+
+.action-button {
+  color: #e90808;
+  justify-content: flex-end;
+  align-items: flex-end;
+  display: flex;
+  margin-top: 10px;
+  padding: 10px;
+  &:hover {
+    color: #e60505;
+  }
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.card-custom .d-flex {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.accordion,
+.accordion-item,
+.accordion-button,
+.accordion-collapse {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px; 
+  min-height: 24px;
+  font-size: 1.2rem; 
+}
+
+
+.mail-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.accordion-body {
+  overflow-y: auto;
+  max-height: 400px;
+  padding: 10px;
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+.accordion-header {
+  margin-bottom: 10px;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #c0d4e9;
+  color: white;
+}
+
+.accordion-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.accordion-body::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.accordion-body::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .search-container input {
+    margin-bottom: 10px;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  .search-container button {
+    width: 100%;
+  }
+  .message-item {
+    padding: 2px;
+  }
+  .pagination {
+    font-size: 0.875rem;
+  }
+  .mail-container {
+    padding: 10px;
+  }
+  .accordion-container {
+    flex-direction: column;
+  }
+  .accordion-body {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .message-item {
+    padding: 10px;
+  }
+  .pagination button {
+    font-size: 0.75rem;
+  }
+  .btn-link {
+    font-size: 0.875rem;
+  }
+  .message-item .col-xs-3,
+  .message-item .col-xs-2 {
+    display: none;
+  }
+  .card-custom {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: none;
+    overflow-y: auto;
+    margin-left: 0;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}

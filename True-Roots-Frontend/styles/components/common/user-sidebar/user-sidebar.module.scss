@@ -1,0 +1,133 @@
+@use '@/styles/variables' as *;
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; // Full height
+  width: 250px; // Adjust the sidebar width
+  background: $clr-purple-light;
+  color: $clr-black;
+  z-index: 1100; // Ensures sidebar stays on top
+  transition: transform 0.3s ease-in-out;
+
+  &.closed {
+    transform: translateX(-100%);
+  }
+}
+
+.close_button {
+    position: absolute; // Position relative to the sidebar
+    top: 5px; // Adjust for spacing
+    right: 5px; // Stick to the right edge of the sidebar
+    background: $clr-white;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    color: $clr-black; 
+    font-size: 24px;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+
+    &:hover {
+      color: $clr-white; // Add hover effect
+      background: $clr-black;
+    }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  font-size: $font-lg;
+  text-align: center;
+  padding: $padding-md;
+  gap: $gap-sm;
+
+  p{
+    margin-top: 15px;
+    font-size: $font-md;
+    font-weight: $text-bolder;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-xl;
+  padding: $padding-sm;
+}
+
+.logo_image{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: $clr-white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: $padding-sm;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover{
+    transform: scale(1.1);
+    box-shadow: 6px 6px 4px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.linksContainer{
+  display: flex;
+  flex-direction: column;
+  gap: $gap-xl;
+  padding: $padding-sm;
+}
+
+
+@media screen and (max-width: $screen-lg) {
+    .sidebar {
+        height: 100%;
+    }
+  .logo {
+    font-size: $font-md;
+    margin-top: 20px;
+    padding: $padding-xs;
+  }
+  .links {
+    padding: $padding-2xs;
+    gap: $gap-md;
+  }
+    
+}
+
+@media screen and (max-width: $screen-md) {
+  .sidebar {
+    width: 200px;
+  }
+  .logo {
+    font-size: $font-sm;
+    padding: $padding-2xs;
+  }
+  .links {
+    padding: $padding-xs;
+    gap: $gap-sm;
+  }
+}
+
+@media screen and (max-width: $screen-sm) {
+  .sidebar {
+    width: 200px;
+  }
+  .logo {
+    font-size: $font-sm;
+    padding: $padding-2xs;
+  }
+  .links {
+    padding: $padding-xs;
+    gap: $gap-sm;
+  }
+
+  .linksContainer{
+    padding: $padding-xs;
+    gap: $gap-sm;
+  }
+}

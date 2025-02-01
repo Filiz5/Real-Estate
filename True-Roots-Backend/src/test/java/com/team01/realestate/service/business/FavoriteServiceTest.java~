@@ -1,0 +1,80 @@
+package com.team01.realestate.service.business;
+
+import com.team01.realestate.entity.concretes.business.Advert;
+import com.team01.realestate.entity.concretes.business.Favorite;
+import com.team01.realestate.payload.mapper.FavoriteMapper;
+import com.team01.realestate.payload.response.business.FavoriteResponse;
+
+import com.team01.realestate.repository.business.FavoriteRepository;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+
+import java.util.Collections;
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.when;
+
+class FavoriteServiceTest {
+
+    @Mock
+    private FavoriteRepository favoriteRepository;
+
+    @Mock
+    private FavoriteMapper favoriteMapper;
+
+    @InjectMocks
+    private FavoriteServiceImpl favoriteService;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+    }
+
+    @Test
+    void testGetAuthenticatedUserFavorites() {
+        // Mock Advert
+        Advert advert = new Advert();
+        advert.setId(1L);
+        advert.setTitle("Test Advert Title");
+
+        // Mock Favorite
+        Favorite favorite = new Favorite();
+        favorite.setId(1L);
+        favorite.setAdvert(advert);
+
+        // Mock FavoriteResponse
+        FavoriteResponse favoriteResponse = FavoriteResponse.builder()
+                .id(1L)
+                .title("Test Advert Title")
+                .build();
+
+        // Mock repository and mapper behavior
+        when(favoriteRepository.findByUserId(1L)).thenReturn(List.of(favorite));
+        when(favoriteMapper.toResponse(favorite)).thenReturn(favoriteResponse);
+
+        // Call service method
+        List<FavoriteResponse> responses = favoriteService.getAuthenticatedUserFavorites(1L);
+
+        // Assert results
+        assertEquals(1, responses.size());
+        assertEquals(1L, responses.get(0).getId());
+        assertEquals("Test Advert Title", responses.get(0).getTitle());
+    }
+
+    @Test
+    void testGetAuthenticatedUserFavorites_EmptyList() {
+        // Mock repository behavior for no favorites
+        when(favoriteRepository.findByUserId(2L)).thenReturn(Collections.emptyList());
+
+        // Call service method
+        List<FavoriteResponse> responses = favoriteService.getAuthenticatedUserFavorites(2L);
+
+        // Assert results
+        assertEquals(0, responses.size());
+    }
+}

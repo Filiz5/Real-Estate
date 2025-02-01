@@ -1,0 +1,23 @@
+@use '@/styles/variables' as *;
+
+.container{
+    display: flex;
+    flex-direction: row;
+    gap: $gap-xl;
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.image{
+    object-fit: cover;
+    border: 1px solid $clr-black;
+    border-radius: $rounded-sm;
+}
+
+.advert_info{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: $gap-sm;
+}

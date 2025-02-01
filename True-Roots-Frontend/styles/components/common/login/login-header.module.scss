@@ -1,0 +1,33 @@
+@use '@/styles/variables' as *;
+
+.login_container{
+    display: flex;
+    justify-content: flex-start;
+    background: linear-gradient(33deg, $clr-white, $clr-blueberryblue);
+    margin-bottom: 50px;
+    margin-left: 30px;
+    margin-right: 30px;
+    border-radius: 10px;
+    border: none;
+    padding: 30px;
+    text-align: center;
+    color: #333;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+@media screen and (max-width: 768px){
+    .login_container{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+}
+
+@media screen and (max-width: 480px){
+    .login_container{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+}

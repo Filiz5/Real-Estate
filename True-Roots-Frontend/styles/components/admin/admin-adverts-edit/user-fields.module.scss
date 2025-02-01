@@ -1,0 +1,86 @@
+@use '@/styles/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  gap: $gap-xl;
+  border: none;
+  width: 100%;
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: $padding-md;
+    gap: $gap-xl;
+    width: 100%;
+    margin-bottom: -30px;
+}
+
+.head_line{
+    display: flex;
+    align-self: start;
+    font-size: $font-md;
+    padding: $padding-sm;
+    border: 1px solid $clr-blueberryblue;
+    border-radius: $rounded-sm;
+    margin-bottom: -42px;
+    background-color: $clr-white;
+    z-index: 1;
+    margin-left: 30px;
+}
+
+.sub_head_line{
+    display: flex;
+    width: 100%;
+    font-weight: bolder;
+    border-bottom: 1px solid $clr-blueberryblue;
+    margin-bottom: 40px;
+}
+
+.body{
+    display: flex;
+    flex-direction: row;
+    gap: $gap-md;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padding-md;
+  background-color: $clr-lavender-blush;
+  border-radius: $rounded-md;
+    width: 100%;
+}
+
+.user, .advertInfo_field1, .advertInfo_field2 {
+    display: flex;
+    flex-direction: column;
+    gap: $gap-sm;
+    width: 100%;
+}
+
+@media screen and (max-width: $screen-sm) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 390px;
+    }
+    .body{
+        display: flex;
+        flex-direction: column;
+        gap: $gap-md;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .user, .advertInfo_field1, .advertInfo_field2 {
+    gap: $gap-sm;
+    width: 100%;
+    align-items: center;
+    border-bottom: 1px solid $clr-blueberryblue;
+}
+  
+}

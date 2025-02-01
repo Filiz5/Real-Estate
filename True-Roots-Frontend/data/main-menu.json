@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Home",
+    "link": "/"
+  },
+  {
+    "title": "Properties",
+    "link": "/properties"
+  },
+  {
+    "title": "About",
+    "link": "/about"
+  },
+  {
+    "title": "Contact",
+    "link": "/contact"
+  },
+  {
+    "title": "Privacy Policy",
+    "link": "/privacy-policy"
+  }
+]

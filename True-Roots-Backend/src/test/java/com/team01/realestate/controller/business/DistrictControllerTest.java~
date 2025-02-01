@@ -1,0 +1,69 @@
+package com.team01.realestate.controller.business;
+
+
+import com.team01.realestate.exception.ResourceNotFoundException;
+import com.team01.realestate.payload.response.business.DistrictResponse;
+import com.team01.realestate.service.impl.DistrictService;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.security.test.context.support.WithMockUser;
+import org.springframework.test.web.servlet.MockMvc;
+
+import java.util.Arrays;
+import java.util.List;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+@SpringBootTest
+@AutoConfigureMockMvc
+@WithMockUser(username = "testUser", roles = {"USER"})
+class DistrictControllerTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @MockBean
+    private DistrictService districtService;
+
+    @Test
+    public void testGetAllDistricts_NotFound() throws Exception {
+        Mockito.when(districtService.getAllDistrict()).thenThrow(new ResourceNotFoundException("No district found"));
+
+        mockMvc.perform(get("/districts"))
+                .andExpect(status().isNotFound())
+                .andExpect(jsonPath("$.status").value(404))
+                .andExpect(jsonPath("$.message").value("No district found"));
+    }
+
+    @Test
+    public void testGetAllDistricts_withData() throws Exception {
+        //Mock verileri
+        List<DistrictResponse> mockDistricks = Arrays.asList(
+                new DistrictResponse(1L, "District 1", "City 1"),
+                new DistrictResponse(2L, "District 2", "City 2"));
+
+        //Mock davranışı tanımla
+        Mockito.when(districtService.getAllDistrict()).thenReturn(mockDistricks);
+
+        //HTTP isteğini yap ve sonuçları kontrol et
+        mockMvc.perform(get("/districts"))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.object").isArray())
+                .andExpect(jsonPath("$.object.length()").value(2))
+                .andExpect(jsonPath("$.object[0].id").value(1))
+                .andExpect(jsonPath("$.object[0].name").value("District 1"))
+                .andExpect(jsonPath("$.object[0].cityName").value("City 1"))
+                .andExpect(jsonPath("$.object[1].id").value(2))
+                .andExpect(jsonPath("$.object[1].name").value("District 2"))
+                .andExpect(jsonPath("$.object[1].cityName").value("City 2"))
+                .andExpect(jsonPath("$.message").value("Districts retrieved successfully"))
+                .andExpect(jsonPath("$.httpStatus").value("OK"));
+    }
+
+}

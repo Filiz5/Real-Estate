@@ -1,0 +1,221 @@
+@use '@/styles/variables' as *;
+
+// Main Image Container
+.main_image_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  .main_image {
+    min-height: 400px;
+    margin: $margin-md;
+    border-radius: $rounded-md;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); // Subtle shadow
+  }
+
+  .image_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .arrow_button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    font-size: $font-3xl;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+
+    .previous,
+    .next {
+      color: $clr-blueberryblue2;
+
+      &:hover {
+        color: $clr-blueberryblue;
+      }
+    }
+
+    &.right {
+      right: 10px;
+    }
+
+    &.left {
+      left: 10px;
+    }
+  }
+
+  // Light Overlay on Image
+  .main_image::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: $rounded-md;
+  }
+
+  // Image Count Overlay (Visible only on small screens)
+  .image_info {
+    position: absolute;
+    bottom: 5%;
+    left: 4%;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: $clr-white;
+    padding: 5px 10px;
+    border-radius: $rounded-sm;
+
+    .image_icon {
+      color: white;
+      font-size: 20px;
+      margin-right: 5px;
+    }
+
+    .image_count {
+      color: white;
+      font-size: 16px;
+    }
+
+    // Hide on large screens
+    @media (min-width: 769px) {
+      display: none;
+    }
+  }
+}
+
+// Thumbnail Section
+.thumbnail_container {
+  display: flex;
+  margin: $margin-md;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.thumbnail_wrapper {
+  cursor: pointer;
+}
+
+.thumbnail {
+  border-radius: $rounded-md;
+  transition: transform 0.3s ease, border 0.3s ease;
+}
+
+.thumbnail:hover {
+  transform: scale(1.1);
+  border: 2px solid $clr-blueberryblue;
+}
+
+// Modal Styles
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+
+  .close_button {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    background: transparent;
+    border: none;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
+
+    &:hover {
+      color: $clr-blueberryblue;
+    }
+  }
+
+  .full_screen_image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: $rounded-md;  
+    margin: 0 auto;
+    margin-top: 2%;
+  }
+
+  .modal_arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    font-size: $font-3xl;
+    border: none;
+    cursor: pointer;
+    color: white;
+
+    &.right {
+      right: 20px;
+    }
+
+    &.left {
+      left: 20px;
+       z-index: 1001;
+    }
+
+    &:hover {
+      color: $clr-blueberryblue;
+    }
+  }
+
+  .modal_info {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: white;
+    font-size: 16px;
+    border-radius: $rounded-sm;
+  }
+}
+
+// Responsive Design for smaller screens (max-width: 768px)
+@media (max-width: 768px) {
+  .main_image {
+    min-height: 300px;
+  }
+
+  .arrow_button {
+    font-size: 20px;
+    padding: 8px;
+  }
+
+  .image_wrapper {
+    display: block;
+  }
+
+  .thumbnail_container {
+    display: none; // Hides the thumbnails on small screens
+  }
+
+  .image_info {
+    display: flex; // Image count information should only show on small screens
+  }
+
+  .main_image_container {
+    .main_image {
+      width: 95%;
+    }
+  }
+}

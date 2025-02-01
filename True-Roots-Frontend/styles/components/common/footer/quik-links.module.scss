@@ -1,0 +1,52 @@
+@use '@/styles/variables' as *;
+
+.quikLinks {
+  font-family: $font-akshar;
+  
+  
+  
+}
+
+.quikLinks p {
+  font-size: $font-2xl; 
+ 
+  margin-bottom: $margin-md; 
+  
+}
+
+.menuList {
+  list-style: none; 
+  padding: 0;
+   margin-bottom: $margin-md;
+  display: flex;
+  flex-direction: column;
+  gap: $gap-xl;
+  
+}
+
+.menuItem {
+  font-size: $font-md; 
+   &:hover {
+    
+    color: $clr-white;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.menuLink {
+  text-decoration: none; 
+  color: $clr-white ;
+
+  &:hover {
+    color: $clr-purple-medium;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

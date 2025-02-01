@@ -1,0 +1,135 @@
+@use '@/styles/variables' as *;
+
+.dreamHouseSection {
+  margin: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: #fff6f6; // Açık pembe arkaplan
+  border-radius: 12px;
+
+  .dreamHouseContent {
+    max-width: 50%;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: #555;
+    }
+
+    .login_button {
+      width: 150px;
+      padding: 10px;
+      background-color: $clr-blueberryblue; /* Blueberry blue */
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login_button:hover {
+      background-color: #5b6ab1; /* Slightly darker shade for hover */
+    }
+  }
+
+  .dreamHouseImage {
+    img {
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+
+  // Responsive Design
+  @media screen and (max-width: $screen-xl) {
+    margin: 32px;
+    padding: 1.5rem;
+
+    .dreamHouseContent {
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.25rem;
+      }
+
+      .login_button {
+        width: 140px;
+        font-size: 14px;
+      }
+    }
+
+    .dreamHouseImage img {
+      width: 300px;
+      height: auto;
+    }
+  }
+
+  @media screen and (max-width: $screen-md) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .dreamHouseContent {
+      max-width: 100%;
+      margin-bottom: 1.5rem;
+
+      h2 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+
+      .login_button {
+        width: 120px;
+        font-size: 14px;
+      }
+    }
+
+    .dreamHouseImage {
+      display: flex;
+      justify-content: center;
+      img {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+      }
+    }
+  }
+
+  @media screen and (max-width: $screen-sm) {
+    padding: 1rem;
+    margin: 16px;
+
+    .dreamHouseContent {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .login_button {
+        width: 100px;
+        font-size: 12px;
+      }
+    }
+
+    .dreamHouseImage {
+      display: none; // Küçük ekranlarda görünmez yap
+    }
+  }
+}

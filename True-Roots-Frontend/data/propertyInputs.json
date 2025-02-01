@@ -1,0 +1,14 @@
+{
+  "propertyStatus": [
+    { "name": "All", "value": "All", "checked": true },
+    { "name": "Rent", "value": "Rent", "checked": false },
+    { "name": "Sale", "value": "Sale", "checked": false }
+  ],
+  "propertyType": [
+    { "name": "All", "value": "All", "checked": true },
+    { "name": "Houses", "value": "Houses", "checked": false },
+    { "name": "Apartments", "value": "Apartments", "checked": false },
+    { "name": "Offices", "value": "Offices", "checked": false },
+    { "name": "Villas", "value": "Villas", "checked": false }
+  ]
+}

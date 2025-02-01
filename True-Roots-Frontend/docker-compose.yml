@@ -1,0 +1,57 @@
+services:
+  true-roots-backend:
+    container_name: true-roots-backend
+    image: mikailozkan/trueroots-backend:latest
+    restart: always
+    ports:
+      - "8090:8090"
+    # environment:
+    #   SPRING_DATASOURCE_URL: jdbc:postgresql://trueroots-db.clsk82iuop88.us-east-1.rds.amazonaws.com/realestate_db
+    #   SPRING_DATASOURCE_USERNAME: postgres
+    #   SPRING_DATASOURCE_PASSWORD: Trueroots.123
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/realestate_db
+      SPRING_DATASOURCE_USERNAME: team01realestate
+      SPRING_DATASOURCE_PASSWORD: 123456
+    depends_on:
+      - db
+    # volumes:
+    #   - C:/Users/ozkan/Downloads/Documents/private.key:/app/private.key
+    #   - C:/Users/ozkan/Downloads/Documents/certificate.crt:/app/certificate.crt
+    networks:
+      - app-network
+
+  frontend:
+    image: mikailozkan/trueroots-frontend:latest
+    # build:
+    #   context: C:\Users\ozkan\Desktop\RealFront\True-Roots-Frontend
+    #   dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://true-roots-backend:8090  # Dynamic URL passed here
+      - PORT=80  # Dynamic port
+    depends_on:
+      - true-roots-backend
+    networks:
+      - app-network
+
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: realestate_db
+      POSTGRES_USER: team01realestate
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    external: true
+    driver: bridge
+    name: app-network
+    

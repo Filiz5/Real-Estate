@@ -1,0 +1,10 @@
+logging:
+  level:
+    root: INFO
+    org:
+      springframework: INFO
+      testcontainers: INFO
+    com:
+      team01: INFO
+      github:
+        dockerjava: INFO

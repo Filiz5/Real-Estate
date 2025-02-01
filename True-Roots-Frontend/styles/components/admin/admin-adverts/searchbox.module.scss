@@ -1,0 +1,234 @@
+@use '@/styles/variables' as *;
+
+.main_container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: $gap-md;
+}
+
+.search_container{
+    display: flex;
+    gap: $gap-md;
+}
+
+.search_input{
+    background-color: $clr-lavender-blush;
+    padding: $padding-sm;
+    border-radius: $rounded-sm;
+    border: 1px solid $clr-black;
+    width: 100%; 
+}
+
+.filter_container{
+    display: flex;
+    flex-direction: row;
+    gap: $gap-md; 
+}
+
+.category_filter{
+    width: 100%; 
+}
+
+.category_select{
+    background-color: $clr-lavender-blush;
+    padding: $padding-sm;
+    border-radius: $rounded-sm;
+    border: 1px solid $clr-black;
+    width: 100%;
+}
+
+.advert_type_filter{
+    width: 100%;
+}
+
+.advert_type_select{
+    background-color: $clr-lavender-blush;
+    padding: $padding-sm;
+    border-radius: $rounded-sm;
+    border: 1px solid $clr-black;
+    width: 100%;
+}
+
+.status_filter{
+    width: 100%;
+}
+
+.status_select{
+    background-color: $clr-lavender-blush;
+    padding: $padding-sm;
+    border-radius: $rounded-sm;
+    border: 1px solid $clr-black;
+    width: 100%;
+}
+
+.price_start{
+    width: 100%;
+}
+
+.price_end{
+    width: 100%;
+}
+
+.price_input{
+    background-color: $clr-lavender-blush;
+    padding: $padding-sm;
+    border-radius: $rounded-sm;
+    border: 1px solid $clr-black;
+    width: 92%;
+}
+
+.button_container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.search_button{
+    background-color: $clr-blueberryblue;
+    color: $clr-white;
+    padding: $padding-sm;
+    border-radius: $rounded-sm;
+    font-size: $font-xl;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+
+    &:hover{
+        opacity: 0.8;
+        transition: all 0.3s;
+    }
+}
+
+@media screen and (max-width: $screen-md){
+    .main_container{
+        flex-direction: column;
+        gap: $gap-md;
+    }
+
+    .search_container{
+        flex-direction: column;
+        gap: $gap-md;
+    }
+
+    .search_input{
+        width: 100%;
+    }
+
+    .filter_container{
+        flex-direction: column;
+        gap: $gap-md;
+    }
+
+    .category_filter{
+        width: 100%;
+    }
+
+    .category_select{
+        width: 100%;
+    }
+
+    .advert_type_filter{
+        width: 100%;
+    }
+
+    .advert_type_select{
+        width: 100%;
+    }
+
+    .status_filter{
+        width: 100%;
+    }
+
+    .status_select{
+        width: 100%;
+    }
+
+    .price_start{
+        width: 100%;
+    }
+
+    .price_end{
+        width: 100%;
+    }
+
+    .price_input{
+        width: 95%;
+    }
+
+    .button_container{
+        width: 100%;
+    }
+
+    .search_button{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: $screen-sm){
+    .main_container{
+        flex-direction: column;
+        width: 380px;
+        gap: $gap-md;
+    }
+
+    .search_container{
+        flex-direction: column;
+        width: 380px;
+    }
+
+    .search_input{
+        width: 380px;
+    }
+
+    .filter_container{
+        flex-direction: column;
+        gap: $gap-md;
+    }
+
+    .category_filter{
+        width: 100%;
+    }
+
+    .category_select{
+        width: 100%;
+    }
+
+    .advert_type_filter{
+        width: 100%;
+    }
+
+    .advert_type_select{
+        width: 100%;
+    }
+
+    .status_filter{
+        width: 100%;
+    }
+
+    .status_select{
+        width: 100%;
+    }
+
+    .price_start{
+        width: 100%;
+    }
+
+    .price_end{
+        width: 100%;
+    }
+
+    .price_input{
+        width: 100%;
+    }
+
+    .button_container{
+        width: 100%;
+    }
+
+    .search_button{
+        width: 100%;
+    }
+    
+}

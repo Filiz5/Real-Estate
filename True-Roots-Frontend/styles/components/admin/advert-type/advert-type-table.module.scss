@@ -1,0 +1,52 @@
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+  margin-top: 20px;
+}
+
+.tableHeader {
+  background-color: #fff;
+  color: #333;
+  padding: 12px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.actionHeader {
+  text-align: right;
+}
+
+.tableRow {
+  background-color: #fdfdfd;
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s;
+}
+
+.tableCell {
+  padding: 16px;
+  border-radius: 8px;
+  vertical-align: middle;
+}
+
+.actionCell {
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+}
+
+.actionButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #4a90e2;
+}
+
+.noData {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+} 

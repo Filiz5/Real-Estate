@@ -1,0 +1,51 @@
+@use '@/styles/variables' as *;
+
+.locationContainer {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-akshar;
+  gap: $gap-md;
+
+  p {
+    font-size: $font-lg;
+  }
+}
+
+.locationInputs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative; 
+  gap: $gap-sm;
+}
+
+.locationSelect {
+  width: 100%; /* Full width dropdown */
+  padding: $padding-sm;
+  padding-right: 2rem; /* Space for the custom arrow */
+  font-family: $font-akshar;
+  font-size: $font-md;
+  color: $clr-blueberryblue;
+  border: 1px solid $clr-blueberryblue;
+  background-color: transparent;
+  border-radius: $rounded-sm;
+  appearance: none; /* Remove default browser styles */
+  outline-color: $clr-blueberryblue ;
+}
+
+
+
+ 
+
+/* Custom arrow */
+.locationInputs::after {
+  content: '▼'; 
+  position: absolute;
+  right: 1rem; /* Position from the right edge */
+  top: 50%; /* Vertically center */
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevent interaction with the arrow */
+  color: $clr-blueberryblue; 
+  font-size: $font-md;
+}
+

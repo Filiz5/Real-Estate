@@ -1,0 +1,76 @@
+@use '@/styles/variables' as *;
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: $gap-sm;
+}
+
+.loginLink {
+  display: flex;
+  align-items: center;
+  gap: $gap-xs;
+  text-decoration: none;
+  font-family: $font-akshar;
+  font-size: $font-lg;
+  color: $clr-black-light;
+  position: relative; // Make it a positioning context for the ::after element
+
+  &:hover {
+    color: $clr-purple-dark;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px; // Adjust the distance between the text and the line
+    left: 0;
+    width: 0;
+    height: 2px; // Line thickness
+    background-color: $clr-purple-dark; // Line color
+    transition: width 0.3s ease; // Smooth transition
+  }
+
+  &:hover::after {
+    width: 100%; // Make the line span the width of the text on hover
+  }
+}
+
+@media (max-width: $screen-md) {
+  .goPerson {
+    display: none;
+  }
+
+  .loginLink {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-akshar;
+    padding-top: $padding-lg;
+ 
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -2px;
+      left: $position-md;
+      width: 0;
+      height: 2px;
+      background-color: $clr-black;
+      margin: -5px auto;
+      
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: scaleX(0); 
+      
+     
+    }
+
+    &:hover::after {
+      opacity: 1;
+    transform: scaleX(1); 
+    width: 50px;
+     
+    }
+  }
+}

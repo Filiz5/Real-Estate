@@ -1,0 +1,44 @@
+@use '@/styles/variables' as *;
+
+.logout{
+    display: flex;
+  align-items: center;
+  flex-direction: column;
+    border: none;
+    gap: $gap-xs;
+    background-color: transparent;
+    text-decoration: none;
+  font-family: $font-akshar;
+  font-size: $font-lg;
+  color: $clr-black-light;
+  font-weight: 600;
+  position: relative;
+  bottom: -2px;
+
+  
+
+
+ &:hover {
+    color: $clr-red-light;
+    border-radius: 5px;
+}
+
+
+ &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -2px; // Adjust the distance between the text and the line
+    left: 0;
+    width: 0;
+    height: 2px; // Line thickness
+    background-color: $clr-red-light; // Line color
+    transition: width 0.3s ease; // Smooth transition
+  }
+
+  &:hover::after {
+    width: 100%; // Make the line span the width of the text on hover
+  }
+
+  
+}

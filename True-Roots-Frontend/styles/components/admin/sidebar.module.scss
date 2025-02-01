@@ -1,0 +1,79 @@
+@use '@/styles/variables' as *;
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; // Full height
+  width: 250px;
+  background: $clr-blueberryblue;
+  color: $clr-white;
+  z-index: 1100; // Ensures sidebar stays on top
+  transition: transform 0.3s ease-in-out;
+  flex-wrap: nowrap;
+
+  &.closed {
+    transform: translateX(-100%);
+  }
+}
+
+.close_button {
+    position: absolute; // Position relative to the sidebar
+    top: 5px; // Adjust for spacing
+    right: 5px; // Stick to the right edge of the sidebar
+    background: $clr-white;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    color: $clr-blueberryblue; // Match the sidebar background
+    font-size: 24px;
+    cursor: pointer;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+
+    &:hover {
+      color: $clr-white; // Add hover effect
+      background: $clr-black;
+    }
+}
+
+.logo {
+  font-size: $font-lg;
+  text-align: center;
+  padding: $padding-md;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-md;
+  padding: $padding-sm;
+}
+
+.linksContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+@media screen and (max-width: $screen-lg) {
+    .sidebar {
+        height: 100vh;
+        gap: $gap-lg;
+    }
+  .logo {
+    font-size: $font-md;
+    padding: $padding-sm;
+    margin-bottom: 20px;
+    margin-right: 50px;
+  }
+  .links {
+    padding: $padding-2xs;
+    font-size: $font-sm;
+  }
+
+  .linksContainer {
+    gap: $gap-md;
+  }
+    
+}

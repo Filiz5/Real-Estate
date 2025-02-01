@@ -1,0 +1,49 @@
+@use '@/styles/variables.scss' as *;
+
+.tabs {
+  display: flex;
+  background-color: $clr-purple-medium;
+  gap: 10px;
+  border-radius: $rounded-md $rounded-md 0 0;
+  
+
+  .tab {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+    background-color: $clr-purple-medium;
+    border-radius: $rounded-md $rounded-md 0 0;
+  
+    &:hover {
+      background-color: #f0f0f0; /* Hover efekti */
+    }
+  }
+
+  /* Aktif Buton Stili */
+  .active {
+    background-color: $clr-blueberryblue; /* Mavi arka plan */
+    color: #ffffff; /* Beyaz yazı rengi */
+    font-weight: bold;
+    border-radius: $rounded-md $rounded-md 0 0;
+  }
+   // Pasif buton stili
+   .tab:not(.active) {
+    color: #555;
+    border-radius: $rounded-md $rounded-md 0 0;
+  }
+}
+
+
+@media screen and (max-width: $screen-lg) {
+
+  .tabs{
+    gap: 5px;
+  }
+
+  .tab {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+}

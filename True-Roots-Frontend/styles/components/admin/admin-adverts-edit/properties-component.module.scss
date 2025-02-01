@@ -1,0 +1,111 @@
+@use '@/styles/variables' as *;
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: $gap-xl;
+    border: none;
+    width: 30%;
+    height: 100%;
+    background-color: rgba($clr-smoke , 0.3);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    border-radius: $rounded-md;
+}
+
+.container p{
+    align-self: start;
+    font-weight: 700;
+    margin-top:  10px;
+    background-color: rgba($clr-blueberryblue, 0.5);
+    padding: $padding-sm;
+    border-radius: $rounded-sm;
+    color: $clr-smoke;
+    width: 50%;
+    align-self: center;
+    text-align: center;
+    box-shadow: 5px 7px 5px rgba($clr-blueberryblue, 0.3);
+
+}
+
+.inner_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: $gap-md;
+    width: 100%;
+    
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.property{
+    display: flex;
+    flex-direction: column;
+    gap: $gap-md;
+    width: 80%;
+    margin-bottom: 20px;
+    
+    flex-wrap: wrap;
+    position: relative;
+
+    label{
+        width: 40%;
+        text-align: center;
+        padding: $padding-sm;
+        box-shadow: 0px 3px 3px rgba($clr-blueberryblue, 0.3);
+        border-radius: $rounded-sm;
+    }
+
+    input{
+        padding: $padding-sm;
+        border-radius: $rounded-sm;
+        border: none;
+        background-color: rgba($clr-lavender-blush, 0.6);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media screen and (max-width: $screen-md){
+    .container{
+        padding: $padding-xl;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .property{
+        
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .property label{
+        align-self: center;
+        width: 48%;
+    }
+
+    .property input{
+        width: 49%;
+        text-align: center;
+    }
+    
+}
+
+@media screen and (max-width: $screen-sm){
+    .container{
+        width: 100%;
+    }
+
+    .property{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .property label{
+        width: 100%;
+    }
+
+    .property input{
+        width: 100%;
+    }
+}

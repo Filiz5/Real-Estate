@@ -1,0 +1,33 @@
+@use '@/styles/variables' as *;
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: $gap-md;
+  padding: $padding-sm;
+  background: $clr-lavender-blush;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  z-index: 1000; 
+  flex-wrap: wrap;
+}
+
+.hamburger {
+  background-color: $clr-white;
+  color: $clr-danger-dark;
+  border: none;
+  border-radius: $rounded-xs;
+  font-size: $font-lg;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $clr-blueberryblue;
+    color: $clr-white;
+  }
+}
+
+.breadcrumb {
+  font-size: $font-md;
+  color: $clr-black;
+}

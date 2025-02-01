@@ -1,0 +1,68 @@
+@use '@/styles/variables' as *;
+
+
+// .container {
+//   flex: 1 1 40%; /* Take 30% of available space */
+//   max-width: 300px; 
+//   box-sizing: border-box;
+//   padding: $padding-2xl 0px $padding-2xl $padding-2xl;
+//   margin-left: 20px;
+//   background-color: $clr-smoke-dark; 
+//   border-radius: $rounded-md; /* Rounded corners */
+//   box-shadow: 4px 5px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+// }
+
+.form{
+  display: flex;
+  flex-direction: column;
+  margin-top: $margin-xl;
+  gap: $gap-2xl;
+
+
+}
+
+.button{
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+        width: 100%;
+        padding-top: $padding-md;
+        padding-bottom: $padding-md;
+         margin-bottom: $margin-2xl;
+        font-family: $font-akshar;
+        font-size: $font-lg;
+        gap: $gap-sm;
+        color: $clr-white;
+        background-color: $clr-blueberryblue ;
+        border: 1px solid $clr-blueberryblue; 
+        border-radius: $rounded-md;
+        cursor: pointer;
+        .searchIcon{
+            font-size: $font-2xl;
+        }
+        &:hover {
+    background-color: $clr-blueberryblue2; 
+    border-color: $clr-blueberryblue2; 
+
+    transition: all 0.3s ease; 
+  }
+
+    }
+
+
+    @media (min-width: $screen-md) {
+
+      .form{
+          display: flex;
+          flex-direction: column;
+          margin-top: $margin-xl;
+          gap: $gap-xl;
+
+
+}
+    }
+
+
+    
+    

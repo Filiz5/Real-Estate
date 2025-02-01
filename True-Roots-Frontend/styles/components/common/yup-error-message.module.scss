@@ -1,0 +1,33 @@
+@use '@/styles/variables' as *;
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: transparent;
+    align-items: center;
+    margin-top: 12px;
+    margin-left: 5px;
+    color: $clr-danger;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+    width: 100%;
+    height: 20px;
+    white-space: nowrap;
+
+    p{
+        margin-top: 0;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: $screen-sm) {
+    .container{
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 10px;
+        width: 100%;
+    }
+    
+}

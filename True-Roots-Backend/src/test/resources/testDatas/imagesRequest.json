@@ -1,0 +1,16 @@
+{
+  "images": [
+    {
+      "name": "Sample Image",
+      "type": "jpg",
+      "featured": true,
+      "data": "base64EncodedDataHere"
+    },
+    {
+      "name": "Another Image",
+      "type": "png",
+      "featured": false,
+      "data": "anotherBase64EncodedData"
+    }
+  ]
+}

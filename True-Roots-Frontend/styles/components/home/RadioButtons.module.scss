@@ -1,0 +1,54 @@
+@use '@/styles/variables.scss' as *;
+
+.container{
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.radioContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.clearButton {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: $rounded-full;
+}
+
+.clearButton:hover {
+  background-color: #d32f2f;
+}
+
+.radioGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  grid-gap: row column;
+}
+.radioLabel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  gap: 1rem;
+
+  label {
+    margin-left: 0.5rem;
+  }
+
+  
+ 
+}
+
+.radioInput {
+  border: none;
+  outline: none;
+}

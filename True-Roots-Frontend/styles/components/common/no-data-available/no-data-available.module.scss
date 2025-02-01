@@ -1,0 +1,48 @@
+@use '@/styles/variables' as *;
+
+.container{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: $clr-blueberryblue2;
+    border-radius: $rounded-xl;
+   
+   
+    padding: $padding-sm $padding-xl;
+ 
+   
+}
+
+.innerContainer{
+    height: 100%;
+    background-color: $clr-blueberryblue2;
+    padding: $padding-md;
+    border-radius: $rounded-lg;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text{
+    text-align: center;
+    color: $clr-black-light;
+    font-family: $font-modulus;
+    font-size: $font-lg;
+    font-weight: $text-bold;
+}
+
+@media screen and (max-width: $screen-3xl){
+    .text{
+        font-size: $font-md;
+    }
+}
+
+@media screen and (max-width: $screen-2xl){
+    .text{
+        font-size: $font-sm;
+    }
+}
+

@@ -1,0 +1,40 @@
+@use '@/styles/variables' as *;
+
+.contact{
+  display: flex;
+  flex-direction: column;
+    font-family: $font-akshar;
+    font-size: $font-md;
+    gap: $gap-sm;
+}
+
+.contact .title {
+  font-size: $font-2xl; 
+  
+} 
+
+.address, .phone, .email{
+  &:hover {
+    
+    color: $clr-white;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.link{
+  text-decoration: none; 
+  color: $clr-white ;
+
+  &:hover {
+    color: $clr-purple-medium;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}

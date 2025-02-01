@@ -1,0 +1,374 @@
+@use '@/styles/variables' as *;
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 10px;
+  background-color: #f9f9f9;
+  width: 100%; /* Tüm genişliği kaplar */
+}
+
+.containerCard {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.imageContainer {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.advert_image {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.status {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #884afc;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+}
+
+.details {
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  align-items: center; /* Başlık ortalanır */
+}
+
+.priceContainer {
+  position: absolute;
+  top: 5px; /* Yukarıdan mesafe */
+  right: 20px; /* Sağdan mesafe */
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+
+.location {
+  font-size: 0.75rem;
+  color: #666;
+  margin: 5px 0 15px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dateTimeContainer {
+  display: flex;
+  justify-content: flex-end;  
+}
+
+.field{
+  margin-top: 20px; /* Alt kısmında boşluk */
+  margin-left: 23px;
+  padding: 10px 20px;
+  
+  
+}
+
+.label {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 1px;
+  font-size: 0.9rem;
+  background-color: #fff2f2;
+  
+}
+
+.row {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  margin-top: 20px; /* Alt kısmında boşluk */
+  margin-left: 23px; /* Butonlar arasına boşluk eklemek için */
+  background-color: #7f4ed8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  flex: 1; /* Butonların genişliklerini eşitlemek için */
+  width: 1px;
+}
+
+.button:hover {
+  background-color: #4d7fec;
+}
+
+@media screen and (max-width: $screen-4xl) {
+  .container {
+    // width: 75%;
+  }
+
+  .form_container {
+    width: 60%;
+    margin-right: 10px;
+  }
+
+  .fields_container {
+    width: 100%;
+  }
+
+  .multiple_field {
+    gap: 50px;
+  }
+
+  .properties_container {
+    width: 40%;
+    margin-right: 0;
+    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: $screen-3xl) {
+  .container {
+    // width: 70%;
+  }
+
+  .form_container {
+    width: 60%;
+    margin-right: 10px;
+  }
+
+  .fields_container {
+    width: 100%;
+  }
+
+  .multiple_field {
+    gap: 50px;
+  }
+
+  .properties_container {
+    width: 40%;
+    margin-right: 0;
+    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: $screen-2xl) {
+  .container {
+    // width: 75%;
+  }
+
+  .fields_container {
+    width: 100%;
+  }
+
+  .multiple_field {
+    gap: 50px;
+  }
+
+  .properties_container {
+    width: 40%;
+    margin-right: 0;
+    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: $screen-xl) {
+  .container {
+    width: 100%;
+  }
+
+  .fields_container {
+    width: 100%;
+  }
+
+  .multiple_field {
+    gap: 50px;
+  }
+
+  .properties_container {
+    width: 40%;
+    margin-right: 0;
+    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: $screen-lg) {
+  .container {
+    width: 100%;
+  }
+
+  .fields_container {
+    width: 100%;
+  }
+
+  .multiple_field {
+    gap: 30px;
+  }
+
+  .properties_container {
+    width: 45%;
+    margin-right: 0;
+    padding-right: 5px;
+  }
+}
+
+@media screen and (max-width: $screen-md) {
+  .container {
+    margin-left: 0;
+  }
+
+  .fields_container {
+    width: 100%;
+  }
+
+  .multiple_field {
+    gap: 30px;
+  }
+
+  .properties_container {
+    margin-right: 0;
+    margin-left: 20px;
+  }
+}
+
+/* Card Layout for Smaller Screens */
+.card {
+  display: none;
+  background-color: rgb(245, 237, 245);
+}
+
+.cardHeader {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cardLocation {
+  display: flex;
+  justify-content: center;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: $gap-sm;
+}
+
+.cardRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: $font-sm;
+}
+
+
+.cardImage {
+  text-align: center;
+  margin-bottom: 10px;
+
+  img {
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.cardRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardLabel {
+  background-color: #ffffff;
+  padding: 3px 20px;
+  border-radius: 5px;
+}
+
+.cardStatus {
+  background-color: #884afc;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 8px;
+}
+
+.cardRow span {
+  font-size: 14px;
+}
+
+@media screen and (max-width: $screen-md) {
+  .containerCard  {
+    display: none;
+  }
+
+  .card {
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 100%;
+
+    .cardHeader {
+      display: flex;
+      justify-content: center;
+    }
+
+    .cardLabel, .cardStatus, 
+    .cardRow, .button{
+      font-size: 1.3rem;
+
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container {
+    width: 370px;
+  }
+
+  .tableContainer {
+    padding: 10px;
+    overflow-x: auto;
+  }
+}

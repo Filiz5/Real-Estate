@@ -1,0 +1,300 @@
+@use '@/styles/variables' as *;
+
+.mainMenubar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: $padding-md;
+  padding-top: $padding-sm;
+  background-color: #fff;
+  position: sticky; 
+  top: 0; 
+  z-index: 1000; 
+  flex-wrap: wrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4); 
+  margin-bottom: 20px;
+}
+
+
+/* Logo styling */
+.logo {
+  display: flex;
+  width: 200px;
+
+}
+
+.hamburger {
+  display: flex;
+  border: 1px solid transparent;
+  padding: 10px;
+  font-size: 40px;
+  cursor: pointer;
+  color: $clr-blueberryblue;
+
+  &:hover {
+    color: $clr-red-light;
+  }
+}
+
+/* Hamburger menu toggle */
+.menuToggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  z-index: 20;
+
+  &:hover {
+    color: $clr-purple;
+  }
+}
+
+/* MainMenu Styling */
+.mainMenuDesktop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding-left: $padding-5xl;
+  margin-left: $margin-3xl;
+  gap: $gap-sm; 
+  font-family: $font-akshar;
+  font-size: $font-lg;
+
+  a {
+    color: $clr-black;
+    text-decoration: none;
+
+    &:hover {
+      color: $clr-purple-dark;
+    }
+    
+    
+  }
+}
+
+.admin_home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  font-size: $font-lg;
+  font-family: $font-akshar;
+  color: $clr-black;
+  text-decoration: none;
+
+  &:hover {
+    color: $clr-purple-dark;
+  }
+}
+
+
+.rightComponents {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  margin-left: auto; 
+  gap: $gap-sm; 
+  font-size: $font-lg;
+  font-family: $font-akshar;
+}
+
+
+
+
+.navMenu  {
+  position: fixed;
+  top: 0;
+  right: -100%; 
+  width: 250px;
+  height: 100vh;
+  background-color: $clr-purple-light;
+  color: $clr-black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: $gap-lg; 
+  padding: $padding-lg;
+  box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1); 
+  transition: right 0.3s ease;
+
+  &.open {
+    right: 0; 
+  }
+
+  ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  li {
+    width: 100%;
+    text-align: center;
+    position: relative; 
+    padding: 10px 0;
+  }
+
+  li::after {
+    content: "";
+    display: block;
+    width: 50%; 
+    height: 2px;
+    background-color: $clr-black; 
+    margin: 5px auto 0;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scaleX(0); 
+  }
+
+  li:hover::after {
+    opacity: 1;
+    transform: scaleX(1); 
+  }
+
+  a {
+    color: $clr-black;
+    font-family: $font-akshar;
+    font-size: $font-lg; 
+    
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $clr-purple-dark; 
+    }
+  }
+
+ 
+  .closeBtn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: $clr-purple-dark;
+    color: $clr-white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $font-md;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $clr-purple;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-xl){
+  .mainMenubar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    padding: $padding-sm;
+    
+  }
+  .mainMenuDesktop {
+    padding-left: 0;
+    margin-left: $margin-3xl;
+  }
+
+  .rightComponents {
+    margin-left: 0;
+    
+  }
+
+  
+
+
+  
+}
+
+@media screen and (max-width: $screen-lg){
+  .mainMenubar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    padding: 0;
+    
+  }
+  .mainMenuDesktop {
+    padding-left: 0;
+    margin-left: 0;
+    font-size: $font-sm;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rightComponents {
+    margin-left: 0;
+    font-size: $font-sm;
+    
+  }
+
+  .hamburger {
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+  }
+
+  .logo {
+    width: 130px;
+  }
+
+  
+}
+
+
+/* Media queries */
+@media (max-width: $screen-md) {
+  .menuToggle {
+    display: block;
+  }
+
+  .mainMenuDesktop,
+  .rightComponents {
+    display: none;
+  }
+
+  
+
+  .navMenu {
+    
+    justify-content: center;
+    align-items: center;
+
+    a {
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-width: $screen-md) {
+  .navMenu {
+    display: none;
+  }
+
+  .mainMenuDesktop {
+    display: flex;
+  }
+
+}
+
+
+@media (max-width: $screen-md){
+
+  
+  .rightComponents {
+   display: none;
+
+  } 
+}

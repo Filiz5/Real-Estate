@@ -1,0 +1,193 @@
+@use '@/styles/variables' as *;
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  justify-items: center;
+  margin: $margin-3xl;
+  height: 100vh;
+ 
+  gap: $gap-2xl;
+  font-family: $font-akshar;
+}
+
+.advertImage {
+  position: relative;
+  width: 100%;
+  max-width: 600px; 
+  height: auto;
+}
+
+.image {
+  width: 100%;
+  min-width: 350px;
+  height: auto; 
+  border-radius: $rounded-lg;
+  object-fit: cover; 
+}
+
+.tourRequestStatus {
+  display: flex;
+  position: absolute;
+  top: 18px; 
+  right: 18px; 
+  padding: $padding-xs $padding-sm;
+  background-color: $clr-blueberryblue;
+  border-radius: $rounded-sm;
+  color: $clr-white-dark;
+  font-size: 0.9rem;
+}
+
+.inputBody {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  
+  margin: $margin-md;
+  gap: $gap-2xl;
+}
+
+.bodyHeader {
+  display: flex;
+  justify-content: space-between; 
+ 
+  gap: $gap-sm;
+}
+
+.headerLeft {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+  .title{
+    font-size: $font-xl;
+    font-weight: 500;
+    color: $clr-black;
+  }
+  .location{
+    color: $clr-gray-darker;
+  }
+}
+
+.price {
+  font-size: $font-xl;
+  color: $clr-gray-darker;
+  white-space: nowrap; 
+  text-align: right; 
+}
+
+.inputUpdate{
+ display: flex;
+ flex-direction: column;
+ gap: $gap-2xl;
+
+  .inputs{
+  display: flex;
+  gap: $gap-2xl;
+  font-family: $font-akshar;
+
+  .inputWrapper{
+    display: flex;
+    flex-direction: column;
+
+    .label{
+      font-size: $font-lg;
+      font-weight: 200;
+    }
+
+    .inputField{
+      display: flex;
+      justify-content: space-between;
+      justify-items: flex-start;
+      align-items: center;
+      gap: $gap-2xl;
+      height: 25px;
+      width: 175px;
+      padding-left: 15px;
+      background-color: $clr-smoke-dark;
+      border: none;
+      border-bottom: 1px solid;
+      outline: none;
+    }
+  }
+}
+}
+
+.buttons{
+  display: flex;
+  gap: $gap-lg;
+
+  button{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    align-items: center;
+    font-family: $font-akshar;
+    font-size: $font-lg;
+    font-weight: 300;
+    width: 170px;
+    padding: $padding-sm;
+    border: none;
+    border-radius: $rounded-sm;
+    cursor: pointer;
+      &:hover {
+    background-color:$clr-blueberryblue2;
+  }
+  }
+
+  .updateButton{
+    color: $clr-white;
+   background-color: $clr-blueberryblue;
+  }
+  .cancelButton{
+    background-color: $clr-purple-medium;
+  }
+}
+
+@media (max-width: $screen-lg) {
+.container {
+    flex-direction: column;
+    height: auto; 
+  }
+
+    .advertImage {
+    max-width: 100%; 
+  }
+
+}
+
+@media (max-width: $screen-md) {
+  .container {
+   margin: $margin-md;
+  }
+
+  .tourRequestStatus {
+    font-size: 0.8rem; 
+    padding: $padding-xs $padding-sm;
+  }
+
+
+}
+
+
+@media (max-width: $screen-sm) {
+
+    .bodyHeader {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-items: flex-start;
+    align-items: flex-start;
+
+  }
+
+    .inputs{
+    display: flex;
+    flex-direction: column;
+  
+
+  }
+
+}

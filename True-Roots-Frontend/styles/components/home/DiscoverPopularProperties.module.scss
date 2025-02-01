@@ -1,0 +1,87 @@
+.discoverSection {
+  padding: 2rem;
+  text-align: center;
+
+  h2 {
+    font-size: 2rem;
+    color: #333;
+  }
+
+  .featured {
+    font-size: 1.2rem;
+    color: #ff5252;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.propertiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  justify-content: center; /* Yatayda ortalamayı etkinleştir */
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+  }
+
+  @media screen and (max-width: 576px) {
+    grid-template-columns: 1fr;
+    justify-items: center; /* Kartları yatayda ortala */
+  }
+}
+
+.propertyCard {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: left;
+  max-width: 300px; /* Kart genişliğini sabit tut */
+  width: 100%; /* Küçük ekranlarda da tam genişlik al */
+}
+
+.propertyCard .propertyImage {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.propertyCard .propertyDetails {
+  padding: 1rem;
+
+  h3 {
+    font-size: 1.4rem;
+    color: #333;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    color: #666;
+
+    &.price {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ff5252;
+    }
+
+    &.description {
+      font-size: 0.9rem;
+      color: #888;
+    }
+  }
+}
+
+.notFoundProperty {
+  font-size: 1.2rem;
+  color: #999;
+}

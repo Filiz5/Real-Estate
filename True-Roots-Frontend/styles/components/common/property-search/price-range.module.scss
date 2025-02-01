@@ -1,0 +1,46 @@
+@use '@/styles/variables' as *;
+
+
+.priceRangeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  font-family: $font-akshar;
+  width: 100%;
+  gap: $gap-md;
+
+  p {
+    font-size: $font-lg;
+    
+    
+  }
+
+  .PriceRangeInputs {
+    display: flex;
+    
+    gap: $gap-md; 
+    width: 100%; 
+    flex-wrap: wrap;
+
+    .input {
+      flex: 1; 
+      padding: $padding-md;
+      font-size: $font-md; 
+      color: $clr-blueberryblue;
+      border: 1px solid $clr-blueberryblue; 
+      border-radius: $rounded-sm; 
+      outline: none;
+      background-color: transparent;
+      transition: all 0.3s ease-in-out;
+      width: 100%;
+
+      &::placeholder {
+        color: $clr-blueberryblue; 
+        font-size: $font-sm;
+      }
+
+      
+    }
+  }
+  
+}

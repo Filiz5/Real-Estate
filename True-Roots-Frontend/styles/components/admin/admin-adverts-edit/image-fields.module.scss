@@ -1,0 +1,172 @@
+@use '@/styles/variables' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: $padding-xl;
+  gap: $gap-md;
+
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $padding-md;
+    gap: $gap-xl;
+    width: 100%;
+}
+
+.head_line{
+    display: flex;
+    align-self: start;
+    font-size: $font-md;
+    padding: $padding-sm;
+    border: 1px solid $clr-blueberryblue;
+    border-radius: $rounded-sm;
+    margin-bottom: -42px;
+    background-color: $clr-white;
+    z-index: 1;
+    margin-left: 30px;
+}
+
+.sub_head_line{
+    display: flex;
+    width: 100%;
+    font-weight: bolder;
+    border-bottom: 1px solid $clr-blueberryblue;
+    margin-bottom: 40px;
+}
+
+
+
+.image_container{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    flex-wrap: wrap;
+    gap: $gap-xl;
+    width: 100%;
+    margin-top: -39px;
+    padding: $padding-3xl;
+    background-color: $clr-lavender-blush;
+    min-height: 250px;
+  border-radius: $rounded-lg;
+}
+
+.image_card {
+  position: relative;
+  max-width: 157px;
+  max-height: 100px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: white;
+  cursor: pointer;
+  border: 2px solid transparent; /* Default border */
+  background-color: $clr-lavender-blush;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.image_card.selected {
+  border: 2px solid #a3a1f7; /* Highlight selected image */
+}
+
+
+
+.image_overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 2px solid #a3a1f7;
+}
+
+.image_card.selected .image_overlay {
+  background-color: #a3a1f7;
+  color: white;
+}
+
+.image_overlay .checkmark {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.image_overlay .circle {
+  width: 10px;
+  height: 10px;
+  border-radius: $rounded-full;
+}
+
+
+
+.button_group {
+  display: flex;
+  position: absolute;
+  justify-content: flex-end;
+  gap: $gap-xl;
+  width: 92%;
+  z-index: 1;
+  bottom: 0;
+  padding-bottom: 20px;
+}
+
+.button_group button {
+  
+  max-height: 30px;
+  padding: 4px 8px;
+  font-size: $font-md;
+  background-color: #a3a1f7;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button_group button:hover {
+  opacity: 0.9;
+}
+
+.button_group button:disabled {
+  background-color: #ccc; /* Gray for disabled buttons */
+  cursor: not-allowed;
+}
+
+
+@media screen and (max-width: $screen-md) {
+  .container {
+    max-width: 750px;
+  }
+  
+}
+
+
+@media screen and (max-width: $screen-sm) {
+    .container{
+      width: 390px;
+        
+    }
+
+    .image_card {
+      max-width: 140px;
+      max-height: 100px;
+    }
+
+    .button_group {
+      gap: $gap-md;
+      right: 15px;
+    }
+
+    .button_group button {
+      font-size: $font-sm;
+    }
+    
+}

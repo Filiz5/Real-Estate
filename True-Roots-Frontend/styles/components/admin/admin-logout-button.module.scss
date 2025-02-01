@@ -1,0 +1,61 @@
+@use '@/styles/variables' as *;
+
+.button {
+    display: flex;
+    align-items: center;
+    color: $clr-white;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    gap: $gap-sm;
+    padding: $padding-lg $padding-2xl;
+    transition: all 0.3s;
+    font-size: $font-md;
+    margin-bottom: $margin-sm;
+    width: 100%;
+    font-family: $font-roboto;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &:hover {
+        background-color: $clr-white;
+        color: $clr-black;
+    }
+}
+
+@media screen and (max-width: $screen-3xl) {
+    .button {
+        font-size: $font-sm;
+        padding: $padding-sm $padding-md;
+    }
+}
+
+@media screen and (max-width: $screen-lg) {
+    .button {
+        font-size: $font-xs;
+        display: flex;
+        justify-content: center;
+        padding: $padding-m;
+        span {
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $screen-sm) {
+
+    .button{
+        padding: $padding-sm;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+}

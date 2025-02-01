@@ -1,0 +1,88 @@
+@use '@/styles/variables' as *;
+.slogan{
+  display: flex;
+  flex-direction: column;
+  gap: $gap-sm;
+}
+.logo{
+  display: flex;
+  justify-content: center;
+}
+
+.a{
+text-decoration: none;
+font-family: $font-akshar;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: $padding-3xl;
+    padding: $padding-md $padding-sm $padding-md $padding-md;
+    background-color: $clr-purple-medium;
+    border-radius: $rounded-sm;
+    border: none;
+    font-size: $font-sm;
+    gap: $gap-sm;
+    cursor: pointer;
+}
+
+.icons{
+    font-size: $font-xl;
+}
+
+.bottomSection {
+  display: flex; /* Add this to enable gap support */
+  flex-direction: column;
+  align-items: center;
+  margin-top: $margin-xl;
+  text-align: center;
+  gap: $gap-2xl; /* Ensure this works with a proper layout */
+}
+
+.mediaButtons {
+  display: flex;
+  justify-content: center;
+  gap: $gap-md;
+
+}
+
+.mediaButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $clr-white;
+  color: $clr-black;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: transparent;
+    color: $clr-white;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.copyRight {
+  font-size: $font-sm;
+}
+
+
+
+@media (max-width: $screen-md) {
+    .mediaButtons{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+    
+}
+}

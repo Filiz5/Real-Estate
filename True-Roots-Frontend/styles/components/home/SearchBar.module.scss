@@ -1,0 +1,85 @@
+@use '@/styles/variables.scss' as *;
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  width: 160%;
+  gap: 0.5rem;
+  z-index: 3;
+  background-color: $clr-purple-medium;
+  padding: $padding-md;
+  border-radius: 0 $rounded-md $rounded-md $rounded-md;
+  
+
+}
+
+.searchInput {
+    width: 100%;
+    padding: $padding-md;
+    font-size: 1.2rem;
+    border: 2px solid ;
+    border-radius: $rounded-md; 
+    outline: none;
+    border: none;
+
+    &:focus {
+      border-color: #007bff;
+    }
+  }
+
+  .searchButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $clr-blueberryblue;
+    color: white;
+    border: none;
+    padding: $padding-sm;
+    border-radius: $rounded-md;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+    
+  }
+
+  @media screen and (max-width: $screen-xl) {
+  .searchBar {
+    width: 90%;
+    padding: $padding-sm;
+  }
+  .searchInput{
+    font-size: 1.2rem;
+    padding: $padding-sm;
+  }
+  
+}
+
+@media screen and (max-width: $screen-md) {
+    .searchBar {
+      width: 80%;
+      padding: $padding-sm;
+    }
+
+    .searchInput {
+      font-size: 1rem;
+      padding: $padding-sm;
+    }
+  }
+
+
+  @media screen and (max-width: $screen-sm) {
+    .searchBar {
+      width: 100%;
+      padding: $padding-sm;
+    }
+
+    .searchInput {
+      font-size: 1rem;
+      padding: $padding-sm;
+    }
+  }
+
+

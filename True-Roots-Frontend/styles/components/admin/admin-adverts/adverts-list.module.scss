@@ -1,0 +1,160 @@
+@use '@/styles/variables' as *;
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: $gap-md;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.thead{
+    display: flex;
+}
+
+.thead th, .body_row td{
+    text-align: center;
+}
+
+.thead th:not(:first-child), .thead  td:not(:last-child){
+    margin-left: 150px;
+}
+
+.head_row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: $gap-3xl;
+    padding: $padding-md;
+    background-color: $clr-white;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.property_head, .date_head, .status_head, .views_head{
+    display: flex;
+}
+
+.property_head{
+    margin-left: 50px;
+}
+
+.date_head{
+    margin-left: 250px;
+}
+
+.status_head{
+    margin-left: 10px;
+}
+
+.views_head{
+    margin-left: 20px;
+}
+
+.body_row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: $gap-3xl;
+    padding: $padding-sm;
+    margin-bottom: 20px;
+    background-color: rgba($clr-lavender-blush, 0.5);
+    border-radius: $rounded-md;
+}
+
+.date{
+
+    justify-content: center;
+    align-items: center;
+}
+
+.status{
+    background-color: $clr-blueberryblue2;
+    color: $clr-white;
+    padding-left: $padding-md;
+    padding-right: $padding-md;
+    padding-top: $padding-sm;
+    padding-bottom: $padding-sm;
+    border-radius: $rounded-sm;
+}
+
+.views_container{
+    display: flex;
+    flex-direction: column;
+    gap: $gap-sm;
+
+}
+
+.view, .like, .tour{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: $gap-md;
+}
+
+.view{
+    color: $clr-blueberryblue;
+}
+
+.like{
+    color: $clr-danger;
+}
+
+.tour{
+    color: $clr-blueberryblue;
+}
+
+@media screen and (max-width: $screen-sm){
+    .head_row{
+        display: none;
+    }
+
+    .body_row{
+        display: flex;
+        flex-direction: column;
+        gap: $gap-md;
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .date{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .status{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .views_container{
+        display: flex;
+        flex-direction: ROW;
+        gap: $gap-md;
+    }
+
+    .view, .like, .tour{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $gap-md;
+    }
+
+    .outer_tr{
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+    }
+
+    .body_head{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}

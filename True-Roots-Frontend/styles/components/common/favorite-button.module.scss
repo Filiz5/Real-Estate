@@ -1,0 +1,18 @@
+.favoriteButton {
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.favoriteActive {
+  color: red;
+  font-size: 24px;
+}
+
+.favoriteInactive {
+  color: white;
+  font-size: 24px;
+}

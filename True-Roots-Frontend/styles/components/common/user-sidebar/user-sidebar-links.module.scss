@@ -1,0 +1,70 @@
+@use '@/styles/variables' as *;
+
+.linkItem {
+    display: flex;
+    align-items: center;
+    color: $clr-black;
+    text-decoration: none;
+    padding: $padding-sm $padding-3xl;
+    transition: all 0.3;
+    font-size: $font-lg;
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &:hover {
+        background-color: $clr-white;
+        color: $clr-black;
+        font-weight: bold;
+        transition: all 0.3 ease-in-out;
+        border-radius: $rounded-md;
+    }
+}
+
+.activeLink {
+    font-weight: bold;
+    background-color: $clr-white;
+    color: $clr-black;
+}
+
+@media screen and (max-width: $screen-3xl) {
+    .linkItem {
+        font-size: $font-sm;
+        padding: $padding-md $padding-md;
+    }
+}
+
+@media screen and (max-width: $screen-lg) {
+    .linkItem {
+        font-size: $font-md;
+        display: flex;
+        justify-content: center;
+        padding: $padding-xs $padding-md;
+
+        span{
+            &:last-child{
+                display: none;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: $screen-sm) {
+    .linkItem {
+        padding: $padding-md;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span{
+            &:first-child{
+                width: 25px;
+                height: 25px;
+            }
+        }
+    }
+}

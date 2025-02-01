@@ -1,0 +1,66 @@
+.privacyPolicy {
+  padding: 2rem;
+  font-family: "Arial", sans-serif;
+  color: #333;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .last-updated {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #000;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: #222;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #444;
+  }
+
+  ul {
+    margin-left: 2rem;
+    margin-top: 0.5rem;
+    list-style-type: disc;
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+      font-size: 1rem;
+      color: #444;
+    }
+  }
+
+  a {
+    color: #0073e6;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+}

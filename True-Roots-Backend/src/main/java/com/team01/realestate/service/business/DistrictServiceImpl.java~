@@ -1,0 +1,13 @@
+package com.team01.realestate.service.business;
+
+import com.team01.realestate.payload.response.business.DistrictResponse;
+import com.team01.realestate.service.impl.DistrictService;
+
+import java.util.List;
+
+public class DistrictServiceImpl implements DistrictService {
+    @Override
+    public List<DistrictResponse> getAllDistrict() {
+        return List.of();
+    }
+}
