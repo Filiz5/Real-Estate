@@ -21,8 +21,8 @@ pipeline {
                 echo 'Building App Dev Images'
                 sh """
                     pwd
-                    docker build --force-rm -t "${IMAGE_TAG_FE}" "${WORKSPACE}/Real-Estate-Team1/True-Roots-Frontend"
-                    docker build --force-rm -t "${IMAGE_TAG_BE}" "${WORKSPACE}/Real-Estate-Team1/True-Roots-Backend"
+                    docker build --force-rm -t "${IMAGE_TAG_FE}" "${WORKSPACE}/True-Roots-Frontend"
+                    docker build --force-rm -t "${IMAGE_TAG_BE}" "${WORKSPACE}/True-Roots-Backend"
                     docker image ls
                 """
             }
