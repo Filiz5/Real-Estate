@@ -3,24 +3,18 @@ pipeline {
 
     environment {
         APP_REPO_NAME = "esenkaya123/real_estate-team1"
+        IMAGE_TAG_FE = "${APP_REPO_NAME}:f.${BUILD_NUMBER}"
+        IMAGE_TAG_BE = "${APP_REPO_NAME}:b.${BUILD_NUMBER}"
     }
 
     stages {
-        stage('Prepare Tags for Docker Images') {
-            steps {
-                echo 'Preparing Tags for Docker Images'
-                script {
-                    env.IMAGE_TAG_FE = "${APP_REPO_NAME}:f.${BUILD_NUMBER}"
-                    env.IMAGE_TAG_BE = "${APP_REPO_NAME}:b.${BUILD_NUMBER}"
-                }
-            }
-        }
-
         stage('Build App Docker Images') {
             steps {
                 echo 'Building App Dev Images'
                 sh """
                     pwd
+                    echo "FE Image: ${IMAGE_TAG_FE}"
+                    echo "BE Image: ${IMAGE_TAG_BE}"
                     docker build --force-rm -t "${IMAGE_TAG_FE}" "${WORKSPACE}/True-Roots-Frontend"
                     docker build --force-rm -t "${IMAGE_TAG_BE}" "${WORKSPACE}/True-Roots-Backend"
                     docker image ls
@@ -39,16 +33,16 @@ pipeline {
             }
         }
 
-
         stage('Run Docker Compose') {
             steps {
-                echo 'Running Docker Compose'
+                echo 'Replacing variables in docker-compose file'
                 sh """
-                    envsubst < docker-compose-template.yml > docker-compose-n.yml
+                    export IMG_TAG_FE="${IMAGE_TAG_FE}"
+                    export IMG_TAG_BE="${IMAGE_TAG_BE}"
+                    envsubst < ${WORKSPACE}/docker-compose-template.yml > ${WORKSPACE}/docker-compose-n.yml
+                    cat ${WORKSPACE}/docker-compose-n.yml  # Dosyanın içeriğini kontrol için
                     docker-compose -f ${WORKSPACE}/docker-compose-n.yml up -d --build
                 """
-                // Eğer logları görmek isterseniz aşağıdaki satırı ekleyebilirsiniz:
-                // sh "docker-compose -f ${WORKSPACE}/docker-compose.yml logs -f"
             }
         }
     }
@@ -61,18 +55,10 @@ pipeline {
 
         success {
             echo 'Pipeline successfully completed.'
-            timeout(time: 5, unit: 'DAYS') {
-                input message: 'Pipeline tamamlandı. Sonlandırmak istiyor musunuz?'
-            }
-            echo 'Pipeline sonlandırıldı.'
         }
 
         failure {
             echo 'Pipeline failed.'
-            timeout(time: 5, unit: 'DAYS') {
-                input message: 'Pipeline başarısız oldu. Sonlandırmak istiyor musunuz?'
-            }
-            echo 'Pipeline sonlandırıldı.'
         }
     }
 }
