@@ -44,7 +44,7 @@ pipeline {
             steps {
                 echo 'Running Docker Compose'
                 sh """
-                    docker-compose -f ${WORKSPACE}/docker-compose.yml up -d --build
+                    docker-compose -f ${WORKSPACE}/docker-compose-n.yml up -d --build
                 """
                 // Eğer logları görmek isterseniz aşağıdaki satırı ekleyebilirsiniz:
                 // sh "docker-compose -f ${WORKSPACE}/docker-compose.yml logs -f"
