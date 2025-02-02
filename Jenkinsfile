@@ -8,13 +8,22 @@ pipeline {
     }
 
     stages {
-        stage('Build App Docker Images') {
+        stage('Prepare Docker Compose File') {
             steps {
-                echo 'Building App Dev Images'
+                echo 'Replacing environment variables in docker-compose-template.yml'
                 sh """
-                    pwd
-                    echo "FE Image: ${IMAGE_TAG_FE}"
-                    echo "BE Image: ${IMAGE_TAG_BE}"
+                    export IMG_TAG_FE="${IMAGE_TAG_FE}"
+                    export IMG_TAG_BE="${IMAGE_TAG_BE}"
+                    envsubst < ${WORKSPACE}/docker-compose-template.yml > ${WORKSPACE}/docker-compose-n.yml
+                    cat ${WORKSPACE}/docker-compose-n.yml  # Dosyanın içeriğini kontrol etmek için
+                """
+            }
+        }
+
+        stage('Build Docker Images') {
+            steps {
+                echo 'Building Docker Images'
+                sh """
                     docker build --force-rm -t "${IMAGE_TAG_FE}" "${WORKSPACE}/True-Roots-Frontend"
                     docker build --force-rm -t "${IMAGE_TAG_BE}" "${WORKSPACE}/True-Roots-Backend"
                     docker image ls
@@ -24,7 +33,7 @@ pipeline {
 
         stage('Push Images to Docker Hub') {
             steps {
-                echo "Pushing App Images to Docker Hub"
+                echo 'Logging into Docker Hub and pushing images'
                 sh """
                     docker login -u esenkaya123 -p Canahmet63
                     docker push "${IMAGE_TAG_FE}"
@@ -35,12 +44,8 @@ pipeline {
 
         stage('Run Docker Compose') {
             steps {
-                echo 'Replacing variables in docker-compose file'
+                echo 'Starting Docker Containers with Docker Compose'
                 sh """
-                    export IMG_TAG_FE="${IMAGE_TAG_FE}"
-                    export IMG_TAG_BE="${IMAGE_TAG_BE}"
-                    envsubst < ${WORKSPACE}/docker-compose-template.yml > ${WORKSPACE}/docker-compose-n.yml
-                    cat ${WORKSPACE}/docker-compose-n.yml  # Dosyanın içeriğini kontrol için
                     docker-compose -f ${WORKSPACE}/docker-compose-n.yml up -d --build
                 """
             }
@@ -49,7 +54,7 @@ pipeline {
 
     post {
         always {
-            echo 'Deleting all local images'
+            echo 'Cleaning up unused Docker images'
             sh 'docker image prune -af'
         }
 
