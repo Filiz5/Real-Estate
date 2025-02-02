@@ -1,7 +1,7 @@
 services:
   true-roots-backend:
     container_name: true-roots-backend
-    image: IMAGE_TAG_BE
+    image: ${IMG_TAG_BE}
     restart: always
     ports:
       - "8090:8090"
@@ -22,7 +22,7 @@ services:
       - app-network
 
   frontend:
-    image: IMAGE_TAG_FE
+    image: ${IMG_TAG_FE}
     # build:
     #   context: C:\Users\ozkan\Desktop\RealFront\True-Roots-Frontend
     #   dockerfile: Dockerfile
