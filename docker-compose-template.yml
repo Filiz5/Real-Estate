@@ -45,7 +45,7 @@ services:
       POSTGRES_USER: team01realestate
       POSTGRES_PASSWORD: 123456
     ports:
-      - "5432:5432"
+      - "5433:5432"
     networks:
       - app-network
 
