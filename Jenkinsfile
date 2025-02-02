@@ -32,6 +32,7 @@ pipeline {
             steps {
                 echo "Pushing App Images to Docker Hub"
                 sh """
+                    docker login -u esenkaya123 -p Canahmet63
                     docker push "${IMAGE_TAG_FE}"
                     docker push "${IMAGE_TAG_BE}"
                 """
