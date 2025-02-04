@@ -42,6 +42,16 @@ pipeline {
             }
         }
 
+        stage('Stop and Remove Existing Containers') {
+            steps {
+                echo 'Stopping and removing any running containers'
+                sh """
+                    docker ps -q | xargs -r docker stop
+                    docker ps -aq | xargs -r docker rm
+                """
+            }
+        }
+
         stage('Run Docker Compose') {
             steps {
                 echo 'Starting Docker Containers with Docker Compose'
