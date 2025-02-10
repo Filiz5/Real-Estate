@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    parameters {
-        choice(name: 'ENVIRONMENT', choices: ['default', 'dev', 'prod', 'test','staging'], description: 'Select the target environment')
-        string(name: 'INSTANCE_TYPE', defaultValue: 't2.micro', description: 'AWS EC2 instance type')
-        string(name: 'INSTANCE_COUNT', defaultValue: '1', description: 'Number of instances to deploy, must be a positive number')
-    }
 
     environment {
         AWS_REGION= "us-east-1"
@@ -16,16 +11,6 @@ pipeline {
         ECR_REGISTRY="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
     }
 
-    stages {    
-        stage('Create Key Pair for AWS instance') {
-            steps {
-                echo "Creating Key Pair "
-                sh """
-                    aws ec2 create-key-pair --region ${AWS_REGION} --key-name ${ENVIRONMENT} --query KeyMaterial --output text > ${ENVIRONMENT}
-                    chmod 400 ${ENVIRONMENT}
-                """
-            }
-        }
         
         stage('Create AWS Resources') {
             steps {
