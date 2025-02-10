@@ -82,10 +82,10 @@ pipeline {
     }
 
     post {
-        always {
+        /*always {
             echo 'Cleaning up unused Docker images'
             sh 'docker image prune -af'
-        }
+        } */
 
         success {
             echo 'Pipeline successfully completed.'
