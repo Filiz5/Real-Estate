@@ -62,6 +62,7 @@ pipeline {
             steps {
                 echo 'Stopping and removing any running containers'
                 sh """
+                  pwd
                   cd K3sdeneme/manifest
                   kubectl delete -f . --ignore-not-found=true
                 """
