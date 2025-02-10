@@ -62,7 +62,7 @@ pipeline {
             steps {
                 echo 'Stopping and removing any running containers'
                 sh """
-                  cd Real-Estate/manifest
+                  cd K3sdeneme/manifest
                   kubectl delete -f . --ignore-not-found=true
                 """
             }
@@ -73,7 +73,7 @@ pipeline {
             steps {
                 echo 'Starting Kubernetes manifest'
                 sh """
-                    cd Real-Estate/manifest
+                    cd K3sdeneme/manifest
                     kubectl apply -f .
                 """
             }
