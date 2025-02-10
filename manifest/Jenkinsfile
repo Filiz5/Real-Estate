@@ -1,12 +1,12 @@
 pipeline {
     agent any
-
+/*
     environment {
-        // APP_REPO_NAME = "esenkaya123/real_estate-team1"
-        // IMAGE_TAG_FE = "${APP_REPO_NAME}:f.${BUILD_NUMBER}"
-        // IMAGE_TAG_BE = "${APP_REPO_NAME}:b.${BUILD_NUMBER}"
+         APP_REPO_NAME = "esenkaya123/real_estate-team1"
+         IMAGE_TAG_FE = "${APP_REPO_NAME}:f.${BUILD_NUMBER}"
+         IMAGE_TAG_BE = "${APP_REPO_NAME}:b.${BUILD_NUMBER}"
     }
-
+*/
     stages {
         /*
         stage('Prepare Docker Compose File') {
