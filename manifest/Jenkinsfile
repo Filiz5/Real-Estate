@@ -58,7 +58,7 @@ pipeline {
         }
 */
 
-        stage('Stop and Remove Existing Containers') {
+        /*stage('Stop and Remove Existing Containers') {
             steps {
                 echo 'Stopping and removing any running containers'
                 sh """
@@ -67,7 +67,7 @@ pipeline {
                   kubectl delete -f . --ignore-not-found=true
                 """
             }
-        }
+        }*/
 
 
         stage('Apply kubernetes') {
