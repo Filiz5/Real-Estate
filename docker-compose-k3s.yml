@@ -1,0 +1,54 @@
+version: '3'
+services:
+  true-roots-frondtend:
+    container_name: true-roots-frondtend
+    image: mikailozkan/trueroots-frontend:latest
+
+    depends_on:
+      - true-roots-backend
+    labels: 
+      kompose.service.expose: "realestate.datastreamcenter.com"
+      kompose.service.type: "nodeport"   
+      kompose.service.nodeport.port: "30001"
+      kompose.image-pull-secret: "regcred"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://true-roots-backend:8090  # Dynamic URL passed here
+      - PORT=80  # Dynamic port
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+
+  true-roots-backend:
+    container_name: true-roots-backend
+    image: mikailozkan/trueroots-backend:latest
+
+    ports:
+      - "8090:8090"
+    restart: always
+    labels:
+      kompose.image-pull-secret: "regcred"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/realestate_db
+      SPRING_DATASOURCE_USERNAME: team01realestate
+      SPRING_DATASOURCE_PASSWORD: 123456
+    networks:
+      - app-network  
+
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_DB: realestate_db
+      POSTGRES_USER: team01realestate
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+      
+networks:
+  app-network:
+    external: true
+    driver: bridge
+    name: app-network

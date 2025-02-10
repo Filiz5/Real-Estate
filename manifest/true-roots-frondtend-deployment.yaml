@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose-k3s.yml
+    kompose.image-pull-secret: regcred
+    kompose.service.expose: realestate.datastreamcenter.com
+    kompose.service.nodeport.port: "30001"
+    kompose.service.type: nodeport
+    kompose.version: 1.35.0 (9532ceef3)
+  labels:
+    io.kompose.service: true-roots-frondtend
+  name: true-roots-frondtend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: true-roots-frondtend
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose-k3s.yml
+        kompose.image-pull-secret: regcred
+        kompose.service.expose: realestate.datastreamcenter.com
+        kompose.service.nodeport.port: "30001"
+        kompose.service.type: nodeport
+        kompose.version: 1.35.0 (9532ceef3)
+      labels:
+        io.kompose.service: true-roots-frondtend
+    spec:
+      containers:
+        - env:
+            - name: NEXT_PUBLIC_API_URL
+              value: http://true-roots-backend:8090
+            - name: PORT
+              value: "80"
+          image: mikailozkan/trueroots-frontend:latest
+          name: true-roots-frondtend
+          ports:
+            - containerPort: 80
+              protocol: TCP
+      imagePullSecrets:
+        - name: regcred
+      restartPolicy: Always
